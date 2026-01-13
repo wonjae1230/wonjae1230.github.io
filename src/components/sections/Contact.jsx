@@ -1,6 +1,6 @@
 import user_info from "../../data/user_info.js";
 
-import { FaSquareXTwitter, FaLinkedin } from "react-icons/fa6";
+import { FaLinkedin, FaGithubAlt } from "react-icons/fa6";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
@@ -9,9 +9,9 @@ function Contact() {
     <section id="contact" className="mt-16 pt-12 px-6 lg:px-24">
       {/* =========== TITLE =========== */}
       <h4 className="text-5xl font-bold text-zinc-900 dark:text-zinc-100">
-        Let&apos;s Get in Touch:{" "}
+        지금 당장 연락주세요:{" "}
         <span className="text-red-800 dark:text-red-500">
-          Ways to Connect with Me
+          저와 함께 <br></br>할 수 있게!
         </span>
       </h4>
 
@@ -22,40 +22,49 @@ function Contact() {
 
       {/* =========== LINKS =========== */}
       <div className="mt-12">
-        {/* =========== FACEBOOK =========== */}
+        {/* =========== tistory =========== */}
         <a
-          href={user_info.socials.facebook}
+          href={user_info.socials.tistory}
           className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300  hover:text-zinc-700 transition-all duration-300"
         >
           <FaFacebook className="self-center text-lg text-red-800 dark:text-red-500" />
-          <span className="self-center">Follow on Facebook</span>
+          <span className="self-center">Follow on tistory </span>
         </a>
 
-        {/* =========== X =========== */}
+        {/* =========== github =========== */}
         <a
-          href={user_info.socials.twitter}
+          href={user_info.socials.github}
           className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 mt-4"
         >
-          <FaSquareXTwitter className="self-center text-lg text-red-800 dark:text-red-500" />
-          <span className="self-center">Follow on X</span>
-        </a>
-        
-        {/* =========== INSTAGRAM =========== */}
-        <a
-          href={user_info.socials.instagram}
-          className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 mt-4"
-        >
-          <FaInstagram className="self-center text-lg text-red-800 dark:text-red-500" />
-          <span className="self-center">Follow on Instagram</span>
+          <FaGithubAlt className="self-center text-lg text-red-800 dark:text-red-500" />
+          <span className="self-center">Follow on github</span>
         </a>
 
-        {/* =========== LINKEDIN =========== */}
+        {/* =========== linkedin =========== */}
         <a
           href={user_info.socials.linkedin}
           className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 mt-4"
         >
           <FaLinkedin className="self-center text-lg text-red-800 dark:text-red-500" />
-          <span className="self-center">Follow on Linkedin</span>
+          <span className="self-center">Follow on linkedin</span>
+        </a>
+
+        {/* =========== insta =========== */}
+        <a
+          href={user_info.socials.instagram}
+          className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 mt-4"
+        >
+          <FaInstagram className="self-center text-lg text-red-800 dark:text-red-500" />
+          <span className="self-center">Follow on instagram</span>
+        </a>
+
+        {/* =========== velog =========== */}
+        <a
+          href={user_info.socials.velog}
+          className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 mt-4"
+        >
+          <FaLinkedin className="self-center text-lg text-red-800 dark:text-red-500" />
+          <span className="self-center">Follow on velog</span>
         </a>
       </div>
 
