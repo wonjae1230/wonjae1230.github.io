@@ -44,6 +44,7 @@ const info = {
         { name: "PWA", reason: "모바일 앱 경험 제공" },
       ],
       learned: ["PWA 구현 경험", "팀 협업 및 Git Flow"],
+      screenshots: ["/oneco.png", "/oneco2.png"],
     },
 
     {
@@ -67,6 +68,7 @@ const info = {
         { name: "Linux", reason: "파일 시스템 모니터링" },
       ],
       learned: ["C 시스템 프로그래밍", "오픈소스 기여 경험"],
+      screenshots: ["/entr.png", "/entr2.png"],
     },
 
     {
@@ -90,6 +92,7 @@ const info = {
         { name: "Algorithm", reason: "스케줄링 알고리즘 구현" },
       ],
       learned: ["CPU 스케줄링 원리 이해", "Java GUI 프로그래밍"],
+      screenshots: ["/cpu.png"],
     },
 
     {
@@ -124,6 +127,7 @@ const info = {
         "GitHub Pages 배포 및 CI/CD",
         "차트 라이브러리 활용",
       ],
+      screenshots: ["/portfoilo.png", "/cover.png"],
     },
   ],
 
