@@ -23,7 +23,7 @@ function NotFound() {
                 onClick={() => navigate("/")}
                 className="bg-red-800 hover:bg-red-700 text-white px-6 py-4 rounded-xl"
               >
-                Go back to homepage
+                홈으로 돌아가기
               </button>
             </div>
           </div>
