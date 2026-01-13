@@ -30,22 +30,20 @@ const info = {
       github: "https://github.com/TAVE-16-ONECO/Frontend",
       link: "https://oneco.io.kr/",
       image: "/oneco.png",
-      detailedDescription: "원코(oneco)는 아이들의 경제 교육을 위한 PWA 서비스입니다. 부모와 자녀가 함께 약속을 만들고, 목표를 달성하면 보상을 받는 시스템을 통해 자연스럽게 경제 개념을 학습할 수 있습니다.",
+      detailedDescription:
+        "원코(oneco)는 아이들의 경제 교육을 위한 PWA 서비스입니다. 부모와 자녀가 함께 약속을 만들고, 목표를 달성하면 보상을 받는 시스템을 통해 자연스럽게 경제 개념을 학습할 수 있습니다.",
       features: [
         "부모-자녀 간 약속 생성 및 관리",
         "목표 달성 시 보상 시스템",
         "PWA로 모바일 앱처럼 설치 가능",
-        "실시간 알림 기능"
+        "실시간 알림 기능",
       ],
       techStack: [
         { name: "React", reason: "컴포넌트 기반 UI 구성" },
         { name: "Tailwind CSS", reason: "빠른 UI 개발" },
-        { name: "PWA", reason: "모바일 앱 경험 제공" }
+        { name: "PWA", reason: "모바일 앱 경험 제공" },
       ],
-      learned: [
-        "PWA 구현 경험",
-        "팀 협업 및 Git Flow"
-      ]
+      learned: ["PWA 구현 경험", "팀 협업 및 Git Flow"],
     },
 
     {
@@ -57,20 +55,18 @@ const info = {
       github: "https://github.com/OPS-entr/entr",
       link: "https://github.com/OPS-entr/entr",
       image: "/entr.png",
-      detailedDescription: "entr은 리눅스 기반의 파일 감시 시스템으로, 오픈소스 프로젝트를 기반으로 데몬 모드와 로깅 기능을 추가하여 개선한 프로젝트입니다.",
+      detailedDescription:
+        "entr은 리눅스 기반의 파일 감시 시스템으로, 오픈소스 프로젝트를 기반으로 데몬 모드와 로깅 기능을 추가하여 개선한 프로젝트입니다.",
       features: [
         "실시간 파일 변경 감지",
         "데몬 모드로 백그라운드 실행",
-        "상세한 로깅 시스템"
+        "상세한 로깅 시스템",
       ],
       techStack: [
         { name: "C", reason: "시스템 프로그래밍" },
-        { name: "Linux", reason: "파일 시스템 모니터링" }
+        { name: "Linux", reason: "파일 시스템 모니터링" },
       ],
-      learned: [
-        "C 시스템 프로그래밍",
-        "오픈소스 기여 경험"
-      ]
+      learned: ["C 시스템 프로그래밍", "오픈소스 기여 경험"],
     },
 
     {
@@ -82,20 +78,52 @@ const info = {
       github: "https://github.com/wonjae1230/OS",
       link: "https://github.com/wonjae1230/OS",
       image: "/cpu.png",
-      detailedDescription: "운영체제 수업에서 학습한 CPU 스케줄링 알고리즘을 시각적으로 이해하기 위해 제작한 시뮬레이터입니다.",
+      detailedDescription:
+        "운영체제 수업에서 학습한 CPU 스케줄링 알고리즘을 시각적으로 이해하기 위해 제작한 시뮬레이터입니다.",
       features: [
         "FCFS, SJF, SRT, RR 알고리즘",
         "간트 차트 시각화",
-        "대기 시간 계산"
+        "대기 시간 계산",
       ],
       techStack: [
         { name: "Java", reason: "객체지향 설계 및 GUI" },
-        { name: "Algorithm", reason: "스케줄링 알고리즘 구현" }
+        { name: "Algorithm", reason: "스케줄링 알고리즘 구현" },
+      ],
+      learned: ["CPU 스케줄링 원리 이해", "Java GUI 프로그래밍"],
+    },
+
+    {
+      id: "portfolio",
+      title: "Portfolio Website",
+      description:
+        "개인 포트폴리오 웹사이트입니다. React와 Tailwind CSS를 활용하여 반응형 디자인을 구현했으며, GitHub Pages로 배포했습니다.",
+      technologies: "React, Tailwind CSS, Vite, GitHub Pages",
+      github: "https://github.com/wonjae1230/wonjae1230.github.io",
+      link: "https://wonjae1230.github.io",
+      image: "/portfoilo.png",
+      detailedDescription:
+        "나만의 포트폴리오 웹사이트를 직접 디자인하고 개발한 프로젝트입니다. 다크모드, 학점 그래프, 프로젝트 상세 페이지 등 다양한 기능을 구현했습니다.",
+      features: [
+        "다크모드 지원",
+        "반응형 웹 디자인",
+        "프로젝트 상세 페이지",
+        "학점 변화 그래프 (Recharts)",
+        "인터랙티브한 UI/UX",
+        "GitHub Pages 자동 배포",
+      ],
+      techStack: [
+        { name: "React", reason: "컴포넌트 기반 개발 및 상태 관리" },
+        { name: "Tailwind CSS", reason: "빠른 스타일링 및 반응형 디자인" },
+        { name: "Vite", reason: "빠른 개발 환경 및 빌드" },
+        { name: "Recharts", reason: "데이터 시각화" },
+        { name: "React Router", reason: "SPA 라우팅" },
       ],
       learned: [
-        "CPU 스케줄링 원리 이해",
-        "Java GUI 프로그래밍"
-      ]
+        "React 프로젝트 구조 설계",
+        "Tailwind CSS를 활용한 모던 UI 구현",
+        "GitHub Pages 배포 및 CI/CD",
+        "차트 라이브러리 활용",
+      ],
     },
   ],
 
