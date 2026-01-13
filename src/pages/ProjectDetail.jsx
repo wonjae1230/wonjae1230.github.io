@@ -1,13 +1,34 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import user_info from "../data/user_info.js";
 import { IoArrowBack } from "react-icons/io5";
 import { CiLink } from "react-icons/ci";
 import { DiGithubAlt } from "react-icons/di";
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const project = user_info.projects.find((p) => p.id === id);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // 페이지 진입 시 스크롤을 맨 위로 이동 및 이미지 인덱스 초기화
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setCurrentImageIndex(0);
+  }, [id]);
+
+  const nextImage = () => {
+    if (project.screenshots && currentImageIndex < project.screenshots.length - 1) {
+      setCurrentImageIndex(currentImageIndex + 1);
+    }
+  };
+
+  const prevImage = () => {
+    if (currentImageIndex > 0) {
+      setCurrentImageIndex(currentImageIndex - 1);
+    }
+  };
 
   if (!project) {
     return (
@@ -47,44 +68,84 @@ function ProjectDetail() {
 
         {/* =========== CONTENT =========== */}
         <div className="px-4 lg:px-20 py-12">
-          {/* =========== PROJECT IMAGE =========== */}
-          <div
-            className="w-full h-96 rounded-xl mb-8 bg-cover bg-center relative overflow-hidden"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${project.image})`,
-            }}
-          >
-            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
-              <div className="flex gap-2 mb-4 flex-wrap">
-                {project.technologies.split(",").map((tech, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500"
-                  >
-                    {tech.trim()}
-                  </span>
-                ))}
-              </div>
-              <div className="flex gap-4">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex gap-2 items-center text-white hover:text-red-400 transition-all"
+          {/* =========== PROJECT IMAGE CAROUSEL =========== */}
+          <div className="relative w-full h-96 rounded-xl mb-4 overflow-hidden bg-white dark:bg-zinc-950">
+            {project.screenshots && project.screenshots.length > 0 && (
+              <>
+                {/* Image Display */}
+                <img
+                  src={project.screenshots[currentImageIndex]}
+                  alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                  className="w-full h-full object-contain pointer-events-none"
+                />
+
+                <div className="absolute inset-0 flex">
+                  {/* Left Click Area */}
+                  {currentImageIndex > 0 && (
+                    <div
+                      onClick={prevImage}
+                      className="w-1/3 h-full cursor-pointer group flex items-center justify-start pl-8"
+                    >
+                      <IoChevronBack className="text-4xl text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-all opacity-0 group-hover:opacity-100" />
+                    </div>
+                  )}
+
+                  {/* Center Area (Image Only) */}
+                  <div className={`h-full ${currentImageIndex > 0 && currentImageIndex < project.screenshots.length - 1 ? 'w-1/3' : currentImageIndex === 0 ? 'w-2/3' : 'w-2/3'}`}>
+                  </div>
+
+                  {/* Right Click Area */}
+                  {currentImageIndex < project.screenshots.length - 1 && (
+                    <div
+                      onClick={nextImage}
+                      className="w-1/3 h-full cursor-pointer group flex items-center justify-end pr-8"
+                    >
+                      <IoChevronForward className="text-4xl text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-all opacity-0 group-hover:opacity-100" />
+                    </div>
+                  )}
+                </div>
+
+                {/* Image Counter */}
+                {project.screenshots.length > 1 && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-zinc-200/80 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 text-sm rounded-full pointer-events-none">
+                    {currentImageIndex + 1} / {project.screenshots.length}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+
+          {/* =========== TECH TAGS & LINKS =========== */}
+          <div className="mb-8">
+            <div className="flex gap-2 mb-4 flex-wrap">
+              {project.technologies.split(",").map((tech, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500"
                 >
-                  <CiLink className="text-2xl" />
-                  <span className="text-sm">프로젝트 보기</span>
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex gap-2 items-center text-white hover:text-red-400 transition-all"
-                >
-                  <DiGithubAlt className="text-2xl" />
-                  <span className="text-sm">GitHub</span>
-                </a>
-              </div>
+                  {tech.trim()}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-4">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className="flex gap-2 items-center text-zinc-600 dark:text-zinc-300 hover:text-red-800 dark:hover:text-red-400 transition-all"
+              >
+                <CiLink className="text-2xl" />
+                <span className="text-sm">프로젝트 보기</span>
+              </a>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="flex gap-2 items-center text-zinc-600 dark:text-zinc-300 hover:text-red-800 dark:hover:text-red-400 transition-all"
+              >
+                <DiGithubAlt className="text-2xl" />
+                <span className="text-sm">GitHub</span>
+              </a>
             </div>
           </div>
 
