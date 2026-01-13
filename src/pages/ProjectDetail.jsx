@@ -55,7 +55,7 @@ function ProjectDetail() {
         <div className="sticky top-0 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 z-10">
           <div className="px-4 lg:px-20 py-4 flex items-center gap-4">
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate(-1)}
               className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-full transition-all"
             >
               <IoArrowBack className="text-2xl text-zinc-800 dark:text-white" />
