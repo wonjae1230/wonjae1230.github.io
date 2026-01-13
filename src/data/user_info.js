@@ -28,6 +28,7 @@ const info = {
       technologies: "React, Tailwind, PWA, netlify",
       github: "https://github.com/TAVE-16-ONECO/Frontend",
       link: "https://oneco.io.kr/",
+      image: "/oneco.png",
     },
 
     {
@@ -37,6 +38,7 @@ const info = {
       technologies: "C, linux, OpenSource",
       github: "https://github.com/OPS-entr/entr",
       link: "https://github.com/OPS-entr/entr",
+      image: "/entr.png",
     },
 
     {
@@ -46,6 +48,7 @@ const info = {
       technologies: "JAVA, CPU, algorithm",
       github: "https://github.com/wonjae1230/OS",
       link: "https://github.com/wonjae1230/OS",
+      image: "/cpu.png",
     },
   ],
 
@@ -88,6 +91,16 @@ const info = {
         "AI를 활용한 IT 교육내용을 중학생 대상으로 직접 수업을 구상 및 진행하였습니다.",
       ],
     },
+  ],
+
+  // ============ GPA DATA ============
+  gpa: [
+    { semester: "1-1", gpa: 3.4 },
+    { semester: "1-2", gpa: 3.3 },
+    { semester: "2-1", gpa: 3.0 },
+    { semester: "2-2", gpa: 3.4 },
+    { semester: "3-1", gpa: 3.7 },
+    { semester: "3-2", gpa: 4.2 },
   ],
 
   // ============ CERTIFICATES ============

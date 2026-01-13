@@ -1,9 +1,21 @@
 import { CiLink } from "react-icons/ci";
 
-function Project({ title, description, technologies, link, github }) {
+function Project({ title, description, technologies, link, github, image }) {
   return (
-    <div className="hover:bg-zinc-100 hover:dark:bg-zinc-900 transition-all duration-300 p-6 md:rounded-xl">
-      <div className="flex gap-2 overflow-x-scroll py-2">
+    <div
+      className="transition-all duration-300 p-6 md:rounded-xl relative overflow-hidden hover:scale-105 hover:shadow-2xl cursor-pointer group"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div
+        className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+        style={{ pointerEvents: 'none' }}
+      ></div>
+      <div className="relative z-10">
+        <div className="flex gap-2 overflow-x-scroll py-2">
         {/* =========== TECHNOLOGIES USED =========== */}
         {technologies.split(",").map((tech, index) => (
           <span
@@ -13,31 +25,32 @@ function Project({ title, description, technologies, link, github }) {
             {tech}
           </span>
         ))}
-      </div>
-      {/* =========== PROJECT TITLE =========== */}
-      <h3 className="font-bold text-lg text-zinc-700 dark:text-zinc-300 mt-4">
+        </div>
+        {/* =========== PROJECT TITLE =========== */}
+        <h3 className="font-bold text-lg text-white mt-4">
         {title}
-      </h3>
-      {/* =========== PROJECT DESCRIPTION =========== */}
-      <p className="leading-7 text-zinc-500 dark:text-zinc-300 font-light text-base mt-4">
+        </h3>
+        {/* =========== PROJECT DESCRIPTION =========== */}
+        <p className="leading-7 text-gray-200 font-light text-base mt-4">
         {description}
-      </p>
+        </p>
 
-      <div className="flex gap-6 text-zinc-600 dark:text-zinc-300 font-medium">
+        <div className="flex gap-6 text-gray-200 font-medium">
         {/* =========== PROJECT LINK =========== */}
-        <a href={link} className="flex gap-2 mt-4 hover:text-red-800 hover:dark:text-red-500 cursor-pointer transition-all duration-300">
+        <a href={link} className="flex gap-2 mt-4 hover:text-red-400 cursor-pointer transition-all duration-300">
           <CiLink className="text-2xl self-center" />
           <span className="text-xs self-center">
             View Project
           </span>
         </a>
         {/* =========== PROJECT GITHUB =========== */}
-        <a href={github} className="flex gap-2 mt-4 hover:text-red-800 hover:dark:text-red-500 cursor-pointer transition-all duration-300">
+        <a href={github} className="flex gap-2 mt-4 hover:text-red-400 cursor-pointer transition-all duration-300">
           <CiLink className="text-2xl self-center" />
           <span className="text-xs self-center">
             View Github
           </span>
         </a>
+        </div>
       </div>
     </div>
   );
