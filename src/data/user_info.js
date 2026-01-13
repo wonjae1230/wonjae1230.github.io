@@ -22,6 +22,7 @@ const info = {
   // ============ PROJECTS ============
   projects: [
     {
+      id: "oneco",
       title: "oneco",
       description:
         "우리 아이 경제공부, 지금 시작해도 될까? 원코는 약속과 보상으로 경제 습관을 만들어요.",
@@ -29,9 +30,26 @@ const info = {
       github: "https://github.com/TAVE-16-ONECO/Frontend",
       link: "https://oneco.io.kr/",
       image: "/oneco.png",
+      detailedDescription: "원코(oneco)는 아이들의 경제 교육을 위한 PWA 서비스입니다. 부모와 자녀가 함께 약속을 만들고, 목표를 달성하면 보상을 받는 시스템을 통해 자연스럽게 경제 개념을 학습할 수 있습니다.",
+      features: [
+        "부모-자녀 간 약속 생성 및 관리",
+        "목표 달성 시 보상 시스템",
+        "PWA로 모바일 앱처럼 설치 가능",
+        "실시간 알림 기능"
+      ],
+      techStack: [
+        { name: "React", reason: "컴포넌트 기반 UI 구성" },
+        { name: "Tailwind CSS", reason: "빠른 UI 개발" },
+        { name: "PWA", reason: "모바일 앱 경험 제공" }
+      ],
+      learned: [
+        "PWA 구현 경험",
+        "팀 협업 및 Git Flow"
+      ]
     },
 
     {
+      id: "entr",
       title: "entr",
       description:
         "entr은 오픈소스 프로젝트를 응용하여 발전시켰습니다.CLI로 데몬모드와 로깅기능, 리눅스기반의 파일감시 시스템입니다",
@@ -39,9 +57,24 @@ const info = {
       github: "https://github.com/OPS-entr/entr",
       link: "https://github.com/OPS-entr/entr",
       image: "/entr.png",
+      detailedDescription: "entr은 리눅스 기반의 파일 감시 시스템으로, 오픈소스 프로젝트를 기반으로 데몬 모드와 로깅 기능을 추가하여 개선한 프로젝트입니다.",
+      features: [
+        "실시간 파일 변경 감지",
+        "데몬 모드로 백그라운드 실행",
+        "상세한 로깅 시스템"
+      ],
+      techStack: [
+        { name: "C", reason: "시스템 프로그래밍" },
+        { name: "Linux", reason: "파일 시스템 모니터링" }
+      ],
+      learned: [
+        "C 시스템 프로그래밍",
+        "오픈소스 기여 경험"
+      ]
     },
 
     {
+      id: "cpu-scheduler",
       title: "CPU scheduling algorithms simulator",
       description:
         "OS시간때 배운 CPU 스케줄링 알고리즘을 시각화한 시뮬레이터입니다. FCFS, SJF, SRT, RR 알고리즘을 지원합니다.",
@@ -49,6 +82,20 @@ const info = {
       github: "https://github.com/wonjae1230/OS",
       link: "https://github.com/wonjae1230/OS",
       image: "/cpu.png",
+      detailedDescription: "운영체제 수업에서 학습한 CPU 스케줄링 알고리즘을 시각적으로 이해하기 위해 제작한 시뮬레이터입니다.",
+      features: [
+        "FCFS, SJF, SRT, RR 알고리즘",
+        "간트 차트 시각화",
+        "대기 시간 계산"
+      ],
+      techStack: [
+        { name: "Java", reason: "객체지향 설계 및 GUI" },
+        { name: "Algorithm", reason: "스케줄링 알고리즘 구현" }
+      ],
+      learned: [
+        "CPU 스케줄링 원리 이해",
+        "Java GUI 프로그래밍"
+      ]
     },
   ],
 

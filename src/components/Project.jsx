@@ -1,8 +1,20 @@
 import { CiLink } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
-function Project({ title, description, technologies, link, github, image }) {
+function Project({ id, title, description, technologies, link, github, image }) {
+  const navigate = useNavigate();
+
+  const handleClick = (e) => {
+    // 링크 클릭 시에는 상세 페이지로 이동하지 않음
+    if (e.target.closest('a')) {
+      return;
+    }
+    navigate(`/project/${id}`);
+  };
+
   return (
     <div
+      onClick={handleClick}
       className="transition-all duration-300 p-6 md:rounded-xl relative overflow-hidden hover:scale-105 hover:shadow-2xl cursor-pointer group"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(${image})`,
@@ -37,14 +49,26 @@ function Project({ title, description, technologies, link, github, image }) {
 
         <div className="flex gap-6 text-gray-200 font-medium">
         {/* =========== PROJECT LINK =========== */}
-        <a href={link} className="flex gap-2 mt-4 hover:text-red-400 cursor-pointer transition-all duration-300">
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+          className="flex gap-2 mt-4 hover:text-red-400 cursor-pointer transition-all duration-300"
+          onClick={(e) => e.stopPropagation()}
+        >
           <CiLink className="text-2xl self-center" />
           <span className="text-xs self-center">
             View Project
           </span>
         </a>
         {/* =========== PROJECT GITHUB =========== */}
-        <a href={github} className="flex gap-2 mt-4 hover:text-red-400 cursor-pointer transition-all duration-300">
+        <a
+          href={github}
+          target="_blank"
+          rel="noreferrer"
+          className="flex gap-2 mt-4 hover:text-red-400 cursor-pointer transition-all duration-300"
+          onClick={(e) => e.stopPropagation()}
+        >
           <CiLink className="text-2xl self-center" />
           <span className="text-xs self-center">
             View Github

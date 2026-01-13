@@ -11,6 +11,7 @@ function Projects() {
         return (
           <Project
             key={index}
+            id={project.id}
             title={project.title}
             description={project.description}
             technologies={project.technologies}
