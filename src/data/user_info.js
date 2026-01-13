@@ -158,7 +158,7 @@ const info = {
   },
 
   // ============ FOOTER ============
-  footer: "© 2024 이원재. All Rights Reserved",
+  footer: "© 2024 Daniel Shan Balico. All Rights Reserved",
 };
 
 export default info;
