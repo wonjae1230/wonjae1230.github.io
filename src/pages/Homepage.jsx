@@ -20,13 +20,13 @@ function Homepage() {
   }, [location.pathname]);
 
   return (
-    <div className="bg-zinc-100 dark:bg-zinc-900">
-      <div className="xl:w-[1200px] md:mx-auto h-full border-x border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+    <div className="bg-zinc-800 dark:bg-zinc-900">
+      <div className="xl:w-[1200px] md:mx-auto h-full border-x border-zinc-100 dark:border-zinc-800 bg-black dark:bg-zinc-950">
         <ToggleTheme switchTheme={switchTheme} />
 
         <Hero />
         <Projects />
-				<EducationAndExperience />
+        <EducationAndExperience />
         <Skills />
         <Contact />
 
