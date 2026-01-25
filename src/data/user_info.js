@@ -43,7 +43,13 @@ const info = {
         { name: "Tailwind CSS", reason: "빠른 UI 개발" },
         { name: "PWA", reason: "모바일 앱 경험 제공" },
       ],
-      learned: ["PWA 구현 경험", "팀 협업 및 Git Flow"],
+      learned: [
+        "PWA 구현 경험",
+        "팀 협업 및 Git Flow",
+        "zustand 상태 관리",
+        "TAVE 16기 연합프로젝트 부문 우수상 수상",
+        "TAVE 16기 인기 프로젝트 선정",
+      ],
       screenshots: ["/oneco.png", "/oneco2.png"],
     },
 
