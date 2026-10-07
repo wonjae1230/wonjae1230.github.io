@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import user_info from "../../data/user_info.js";
+import { rememberScroll } from "../../hooks/useScrollMemory.js";
 import Section from "../Section.jsx";
 
 // 날짜 내림차순 (최근 수상이 먼저)
@@ -122,6 +124,15 @@ function Awards() {
             <p className="text-sm text-ink/80">{a.event}</p>
             {a.detail && <p className="mt-1 text-sm text-ink/60 leading-snug">{a.detail}</p>}
             {a.issuer && <p className="mt-1 text-sm text-muted">{a.issuer}</p>}
+            {a.project && (
+              <Link
+                to={`/project/${a.project}`}
+                onClick={rememberScroll}
+                className="mt-3 inline-block font-mono text-xs text-muted underline underline-offset-4 decoration-line hover:text-accent hover:decoration-accent transition-colors"
+              >
+                관련 프로젝트 보기 →
+              </Link>
+            )}
           </li>
         ))}
       </ol>

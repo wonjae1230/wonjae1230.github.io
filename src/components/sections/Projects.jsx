@@ -30,13 +30,16 @@ function Projects() {
             <Link
               to={`/project/${p.id}`}
               onClick={rememberScroll}
-              onMouseEnter={() => setActive(p)}
+              onMouseEnter={() => setActive(p.image ? p : null)}
               onFocus={() => setActive(null)}
               className="group grid grid-cols-[1fr_auto] md:grid-cols-12 gap-x-6 gap-y-2 py-6 md:py-8"
             >
-              <h3 className="md:col-span-4 text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-accent transition-colors">
-                {p.title}
-              </h3>
+              <div className="md:col-span-4">
+                <h3 className="text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-accent transition-colors">
+                  {p.title}
+                </h3>
+                {p.period && <p className="mt-2 font-mono text-xs text-muted">{p.period}</p>}
+              </div>
               <span
                 aria-hidden="true"
                 className="md:order-last md:col-span-1 justify-self-end self-start text-xl text-muted group-hover:text-accent group-hover:translate-x-1 transition-all"
@@ -45,16 +48,17 @@ function Projects() {
               </span>
               <div className="col-span-2 md:col-span-7">
                 <p className="text-ink/80 leading-relaxed">{p.description}</p>
+                {p.award && <p className="mt-2 text-sm text-accent">{p.award}</p>}
                 <p className="mt-3 font-mono text-xs text-muted">
                   {tags(p.technologies).join(" · ")}
                 </p>
               </div>
-              <img
+              {p.image && <img
                 src={p.image}
                 alt=""
                 loading="lazy"
                 className="col-span-2 mt-3 w-full aspect-[16/9] object-cover rounded-sm border border-line md:hidden"
-              />
+              />}
             </Link>
           </li>
         ))}

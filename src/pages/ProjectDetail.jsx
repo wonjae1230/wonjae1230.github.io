@@ -85,6 +85,12 @@ function ProjectDetail() {
           <h1 className="mt-6 text-5xl md:text-8xl font-extrabold tracking-[-0.05em] leading-none">
             {project.title}
           </h1>
+          {(project.period || project.award) && (
+            <p className="mt-5 font-mono text-xs text-muted flex flex-wrap gap-x-4 gap-y-1">
+              {project.period && <span>{project.period}</span>}
+              {project.award && <span className="text-accent">{project.award}</span>}
+            </p>
+          )}
           <p className="mt-6 text-lg md:text-xl max-w-[34em] text-ink/85 leading-relaxed">
             {project.description}
           </p>
@@ -111,13 +117,21 @@ function ProjectDetail() {
         </div>
 
         <div className="mt-12 md:mt-16">
-          <Gallery key={id} images={project.screenshots ?? [project.image]} title={project.title} />
+          {(project.screenshots?.length || project.image) && (
+            <Gallery key={id} images={project.screenshots ?? [project.image]} title={project.title} />
+          )}
         </div>
 
         <div className="mt-12">
           <Block title="소개">
             <p className="text-lg leading-relaxed text-ink/85">{project.detailedDescription}</p>
           </Block>
+
+          {project.role && (
+            <Block title="맡은 역할">
+              <p className="text-lg leading-relaxed text-ink/85">{project.role}</p>
+            </Block>
+          )}
 
           <Block title="주요 기능">
             <ul className="grid sm:grid-cols-2 gap-x-6">

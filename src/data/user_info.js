@@ -22,6 +22,154 @@ const info = {
   // ============ PROJECTS ============
   projects: [
     {
+      id: "guider",
+      title: "Guider",
+      period: "2026.07 – 2026.08",
+      description:
+        "웹 페이지 사용법을 AI가 안내하는 크롬 익스텐션. 하고 싶은 일을 말하면 눌러야 할 버튼을 찾아 하이라이트로 안내합니다.",
+      technologies: "Chrome Extension, React, Express, Claude API, Redis",
+      github: "https://github.com/wonjae1230/Guider",
+      link: "https://github.com/wonjae1230/Guider",
+      image: "/guider.jpg",
+      award: "2026 세종 AX 해커톤 최우수상",
+      role: "팀 6명 중 최다 커밋. DOM 추출·하이라이트 content script, 플로팅 위젯 UI, Claude API 프록시 서버를 구현했습니다.",
+      detailedDescription:
+        "\"설명은 그만. 목적은 당신이 정하고, 길은 가이더가 안내합니다.\" 정부24처럼 메뉴가 복잡한 사이트에서 사용자가 자연어로 목적을 입력하면, 현재 페이지의 DOM을 분석해 클릭해야 할 요소를 찾아 단계별로 하이라이트합니다. 2026 세종 AX 해커톤(주제: SW·UI/UX 융합 서비스 개발)에서 최우수상을 받았습니다.",
+      features: [
+        "자연어 질문 → 페이지 DOM 분석 → 클릭할 요소 하이라이트",
+        "단계별 안내와 URL 변경 감지 후 자동 재실행",
+        "iframe·숨겨진 메뉴까지 탐색",
+        "DOM 요소의 민감정보 마스킹 후 AI 전송",
+        "단축키로 여는 플로팅 위젯 (Shadow DOM)",
+        "Redis 응답 캐시로 반복 질문 비용 절감",
+      ],
+      techStack: [
+        { name: "Chrome Extension (MV3)", reason: "content script로 페이지 DOM 접근" },
+        { name: "React", reason: "Shadow DOM에 주입하는 위젯 UI" },
+        { name: "Express", reason: "API 키를 숨기는 Claude 프록시 서버" },
+        { name: "Claude API", reason: "질문과 DOM 요소를 매칭해 경로 판단" },
+        { name: "Redis", reason: "같은 페이지·질문 응답 캐싱" },
+      ],
+      learned: [
+        "LLM에 넘길 DOM을 줄이고 정제하는 프롬프트 설계",
+        "크롬 익스텐션 권한·서비스 워커 구조",
+        "해커톤 일정 안에서 브랜치·PR 규칙으로 협업",
+        "2026 세종 AX 해커톤 최우수상 수상",
+      ],
+      screenshots: ["/guider.jpg", "/guider2.jpg", "/guider3.jpg"],
+    },
+
+    {
+      id: "clip",
+      title: "CLIP",
+      period: "2026.02 –",
+      description:
+        "논문을 검색하고 연구 흐름을 로드맵으로 정리해주는 AI 논문 탐색 서비스. 프론트엔드를 전담했습니다.",
+      technologies: "React, React Flow, zustand, Tailwind, Spring Boot, Python",
+      github: "https://github.com/CONNECTOR-CLIP/FRONTEND",
+      link: "https://github.com/CONNECTOR-CLIP/FRONTEND",
+      image: "/clip.jpg",
+      award: "한국디지털콘텐츠학회 하계종합학술대회 은상",
+      role: "프론트엔드 전담(저장소 커밋 대부분). 백엔드·AI 저장소에도 참여했습니다.",
+      detailedDescription:
+        "arXiv 논문 데이터를 기반으로 논문을 검색하고, 논문 간 관계와 후속 연구 방향을 그래프 형태의 연구 로드맵으로 보여주는 서비스입니다. 이 프로젝트를 바탕으로 한 논문 「지능형 논문 탐색 기반 연구 로드맵 생성」이 2026 한국디지털콘텐츠학회 하계종합학술대회 대학생 논문경진대회에서 은상을 받았습니다.",
+      features: [
+        "자연어 논문 검색 (arXiv 메타데이터, OpenSearch BM25)",
+        "논문 관계를 노드-엣지 그래프로 보여주는 연구 로드맵",
+        "CSO 온톨로지 기반 논문 분류 트리",
+        "논문의 한계 분석과 후속 연구 아이디어 제안",
+        "검색 기록·북마크·마이페이지",
+      ],
+      techStack: [
+        { name: "React + React Flow", reason: "로드맵 그래프 렌더링과 상호작용" },
+        { name: "dagre", reason: "그래프 노드 자동 배치" },
+        { name: "zustand", reason: "로그인·사용자 상태 관리" },
+        { name: "Tailwind CSS v4", reason: "UI 스타일링" },
+        { name: "Spring Boot", reason: "인증·분석 API 서버" },
+        { name: "Python", reason: "논문 수집·검색 엔진·AI 분석" },
+      ],
+      learned: [
+        "React Flow와 dagre로 그래프형 UI 구현",
+        "AI 결과를 사용자가 탐색 가능한 UI로 옮기는 설계",
+        "학회 논문 집필과 발표",
+        "한국디지털콘텐츠학회 하계종합학술대회 은상 수상",
+      ],
+      screenshots: ["/clip.jpg"],
+    },
+
+    {
+      id: "intra-q",
+      title: "intra-Q",
+      period: "2026.05",
+      description:
+        "사내 문서를 AI가 읽고 출처를 표시하며 답하는 기업 내부 문서 RAG 챗봇.",
+      technologies: "React, FastAPI, LangChain, ChromaDB, Gemini, Vertex AI",
+      github: "https://github.com/wonjae1230/intra-Q",
+      link: "https://github.com/wonjae1230/intra-Q",
+      image: "/intraq.jpg",
+      award: "국제문화기술진흥원 우수논문상",
+      role: "팀 3명 중 최다 커밋. RAG 파이프라인(쿼리 리라이팅, BM25+RRF, 메타데이터 필터)과 출처 카드 저장 기능을 맡았습니다.",
+      detailedDescription:
+        "HR 정책, 사내 규정, SOP 같은 PDF를 올리면 바로 검색할 수 있고, 모든 답변에 출처 파일명과 페이지를 [1], [2]처럼 표기합니다. 질문이 모호하면 먼저 되묻고, 관점에 따라 답이 갈리면 선택지를 제시합니다. 관련 연구 「LLM의 환각 제어를 위한 기업 문서 RAG 프레임워크 연구」로 국제문화기술진흥원 우수논문상을 받았습니다.",
+      features: [
+        "PDF 업로드 → 청킹 → 임베딩 → ChromaDB 저장",
+        "질문 유형 분류(Clarify): 되묻기 / 바로 답변 / 선택지 제시",
+        "Multi-Query + BM25 + RRF 합산 검색",
+        "Vertex AI 리랭커로 상위 5개 근거만 LLM에 전달",
+        "모든 사실에 인라인 출처 표기, 출처 카드 영구 저장",
+      ],
+      techStack: [
+        { name: "FastAPI", reason: "REST API·JWT 인증" },
+        { name: "LangChain", reason: "RAG 파이프라인 조율" },
+        { name: "ChromaDB", reason: "벡터 저장·유사도 검색" },
+        { name: "Vertex AI Reranker", reason: "교차 인코더 재정렬" },
+        { name: "Gemini 2.5 Flash", reason: "답변·출처 생성" },
+        { name: "React", reason: "채팅·문서 관리 UI" },
+      ],
+      learned: [
+        "리랭커 도입 전후 검색 품질 비교 (관련 청크가 1·2·5위 점유)",
+        "프롬프트 최적화로 인라인 인용 0개 → 35개",
+        "한국어 형태소 기반 BM25로 키워드 검색 보완",
+        "DevOps 과정 프로젝트 우수상 수상",
+        "국제문화기술진흥원 우수논문상 수상",
+      ],
+      screenshots: ["/intraq.jpg"],
+    },
+
+    {
+      id: "songpa-parking",
+      title: "송파구 불법주차 분석",
+      period: "2026 · 8주",
+      description:
+        "R 공간데이터 분석으로 송파구 불법주차 핫스팟의 구조적 원인을 규명한 데이터 분석 프로젝트.",
+      technologies: "R, Spatial Analysis, PCA, K-means, ANOVA",
+      github: "https://github.com/wonjae1230/songpa-illegal-parking",
+      link: "https://github.com/wonjae1230/songpa-illegal-parking",
+      image: "/songpa.jpg",
+      role: "도로 Feature Engineering, 5대 환경요인 통합 클러스터링, ANOVA 검정을 맡았습니다.",
+      detailedDescription:
+        "\"불법주차는 도시 공간 구조의 문제다.\" 서울시 단속 데이터에 도로망, POI, 야간조도, 토지용도 엔트로피를 결합해 송파구 27개 행정동을 분석했습니다. 핫스팟 3곳(잠실본동·방이2동·가락본동)의 공통 구조를 PCA + K-means로 묶고, ANOVA(F = 5.93, p = 0.0038)로 클러스터 간 차이가 유의함을 검증했습니다. 결론은 주차장 확충이 아니라 회전율 관리입니다.",
+      features: [
+        "KDE로 불법주차 핫스팟 도출",
+        "도로 밀도·이면도로 비율·교차로 밀도 파생변수 설계",
+        "수평·수직 2축 토지용도 엔트로피 정의",
+        "PCA + K-means로 행정동 4개 유형 분류",
+        "ANOVA 검정과 솔루션 효과 시뮬레이션 (불법주차 -41%)",
+      ],
+      techStack: [
+        { name: "R", reason: "공간 데이터 처리와 통계 분석" },
+        { name: "PCA · K-means", reason: "다변량 요인 통합과 유형 분류" },
+        { name: "ANOVA", reason: "클러스터 간 차이 통계 검정" },
+      ],
+      learned: [
+        "전국 도로 11만 건을 SQL로 걸러 메모리 문제 해결",
+        "가설이 반증된 지점을 다변량 분석의 근거로 활용",
+        "두 가지 공간 집계 방법을 비교해 하나를 채택",
+      ],
+      screenshots: ["/songpa.jpg", "/songpa2.jpg", "/songpa3.jpg"],
+    },
+
+    {
       id: "oneco",
       title: "oneco",
       description:
@@ -30,6 +178,7 @@ const info = {
       github: "https://github.com/TAVE-16-ONECO/Frontend",
       link: "https://oneco.io.kr/",
       image: "/oneco.png",
+      award: "TAVE 16기 연합프로젝트 우수상",
       detailedDescription:
         "원코(oneco)는 아이들의 경제 교육을 위한 PWA 서비스입니다. 부모와 자녀가 함께 약속을 만들고, 목표를 달성하면 보상을 받는 시스템을 통해 자연스럽게 경제 개념을 학습할 수 있습니다.",
       features: [
@@ -207,6 +356,7 @@ const info = {
       issuer: "(재)세종테크노파크",
       date: "2026.08.17",
       image: "/awards/sejong-ax-hackathon.jpg",
+      project: "guider",
     },
     {
       title: "은상",
@@ -215,6 +365,7 @@ const info = {
       issuer: "(사)한국디지털콘텐츠학회",
       date: "2026.07.03",
       image: "/awards/kdca-summer-paper.jpg",
+      project: "clip",
     },
     {
       title: "우수논문상",
@@ -223,6 +374,7 @@ const info = {
       issuer: "(사)국제문화기술진흥원",
       date: "2026.06.26",
       image: "/awards/iact-paper.jpg",
+      project: "intra-q",
     },
     {
       title: "연합프로젝트 우수상",
@@ -231,6 +383,7 @@ const info = {
       issuer: "수도권 IT 연합동아리 TAVE",
       date: "2026.03",
       image: "/awards/tave-project.jpg",
+      project: "oneco",
     },
     {
       title: "표창장",
