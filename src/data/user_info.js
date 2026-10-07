@@ -156,6 +156,16 @@ const info = {
   // ============ EXPERIENCE ============
   experience: [
     {
+      position: "해외연수",
+      company: "미국 연수 프로그램",
+      duration: "09 2026 - 10 2026 (2 Months)",
+      descriptions: [
+        "ACM 학회에 참석했습니다.",
+        "IIT 대학교에서 수업을 청강했습니다.",
+        "노스웨스턴 대학교와 공동 프로그램을 진행했습니다.",
+      ],
+    },
+    {
       position: "oneday-economy Frontend Developer",
       company: "TAVE 16기",
       duration: "09 2025 - 02 2026 (5 Months)",
