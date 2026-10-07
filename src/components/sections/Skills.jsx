@@ -1,94 +1,48 @@
-import { BiLogoNetlify, BiLogoTypescript } from "react-icons/bi";
-import { DiGithubAlt, DiMongodb } from "react-icons/di";
-import { FaDocker } from "react-icons/fa";
-import {
-  FaAws,
-  FaCss3Alt,
-  FaGitAlt,
-  FaHtml5,
-  FaNodeJs,
-  FaPython,
-  FaReact,
-} from "react-icons/fa6";
-import { IoLogoJavascript } from "react-icons/io";
-import {
-  SiFlask,
-  SiPostman,
-  SiTailwindcss,
-  SiTensorflow,
-} from "react-icons/si";
+import user_info from "../../data/user_info.js";
+import Section from "../Section.jsx";
 
 function Skills() {
   return (
-    <section id="skills" className="mx-4 lg:mx-20">
-      {/* =========== SKILLS TITLE =========== */}
-      <h4 className="text-4xl font-bold text-center mt-20 dark:text-white">
-        Technologies I Use.
-      </h4>
-      {/* =========== LIST OF SKILLS =========== */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 mt-8">
-        <span className="inline-flex items-center justify-between gap-x-2 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <FaHtml5 className="text-2xl" /> HTML
-        </span>
+    <Section id="skills" title="기술" en="Skills & Certificates">
+      <dl className="border-t border-line">
+        {user_info.skills.map((s) => (
+          <div key={s.group} className="grid sm:grid-cols-[12rem_1fr] gap-x-6 gap-y-2 py-5 border-b border-line">
+            <dt className="font-mono text-xs text-muted pt-1.5">{s.group}</dt>
+            <dd className="text-lg leading-relaxed">
+              {s.items.map((item, i) => (
+                <span key={item}>
+                  {item}
+                  {i < s.items.length - 1 && <span className="text-muted/60 mx-2">/</span>}
+                </span>
+              ))}
+            </dd>
+          </div>
+        ))}
+      </dl>
 
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <FaCss3Alt className="text-2xl" /> CSS
-        </span>
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <IoLogoJavascript className="text-2xl" /> JavaScript
-        </span>
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <BiLogoTypescript className="text-2xl" /> TypeScript
-        </span>
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <FaPython className="text-2xl" /> Python
-        </span>
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <FaReact className="text-2xl" /> React
-        </span>
-
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <FaNodeJs className="text-2xl" /> NodeJS
-        </span>
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <SiFlask className="text-2xl" /> Flask
-        </span>
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <SiTailwindcss className="text-2xl" /> Tailwind
-        </span>
-
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <SiTensorflow className="text-2xl" /> Tensorflow
-        </span>
-
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <FaGitAlt className="text-2xl" /> Git
-        </span>
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <DiGithubAlt className="text-2xl" /> Github
-        </span>
-
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <BiLogoNetlify className="text-2xl" /> Netlify
-        </span>
-
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <SiPostman className="text-2xl" /> Postman
-        </span>
-
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <FaAws className="text-2xl" /> AWS EC2
-        </span>
-
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <DiMongodb className="text-2xl" /> MongoDB
-        </span>
-
-        <span className="inline-flex items-center justify-between gap-x-1.5 py-4 px-3 hover:-translate-y-1.5 transition-translate duration-500 rounded-xl font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
-          <FaDocker className="text-2xl" /> Docker
-        </span>
-      </div>
-    </section>
+      <h3 className="mt-16 font-mono text-xs uppercase tracking-wider text-muted">
+        수료증 — {user_info.certificates.length}
+      </h3>
+      <ul className="mt-2 border-t border-line">
+        {user_info.certificates.map((c) => (
+          <li key={c.link} className="border-b border-line">
+            <a
+              href={c.link}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex items-baseline justify-between gap-6 py-4"
+            >
+              <span className="group-hover:text-accent transition-colors">
+                {c.title.replace(/ Certificate$/, "")}
+              </span>
+              <span className="shrink-0 font-mono text-xs text-muted">
+                {c.description.replace(/^Provided by /, "").replace(" & Authorized by ", " · ")} ↗
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Section>
   );
 }
 

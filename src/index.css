@@ -3,64 +3,70 @@
 @tailwind utilities;
 
 :root {
-  font-family: "Heebo", sans-serif;
+  --bg: 244 244 242;
+  --surface: 235 235 232;
+  --ink: 20 20 20;
+  --muted: 107 107 102;
+  --line: 214 214 209;
+  --accent: 43 68 224;
+  color-scheme: light;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.dark {
+  --bg: 17 17 17;
+  --surface: 27 27 26;
+  --ink: 237 237 232;
+  --muted: 143 143 136;
+  --line: 58 58 55;
+  --accent: 138 155 255;
+  color-scheme: dark;
+}
+
+html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+body {
+  @apply bg-bg text-ink font-sans antialiased;
+  font-feature-settings: "ss06";
+  word-break: keep-all;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #991b1b;
+::selection {
+  @apply bg-accent text-bg;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 3px;
 }
 
-/* Page Transition Animations */
-.page-slide-enter {
-  transform: translateY(100%);
+.caret {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.82em;
+  margin-left: 0.04em;
+  transform: translateY(0.06em);
+  background: rgb(var(--accent));
+  animation: blink 1.05s steps(1) infinite;
 }
 
-.page-slide-enter-active {
-  transform: translateY(0);
-  transition: transform 400ms ease-in-out;
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
-.page-slide-exit {
-  transform: translateY(0);
+.reveal {
+  animation: rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-.page-slide-exit-active {
-  transform: translateY(-100%);
-  transition: transform 400ms ease-in-out;
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
 }
 
-.page-fade-enter {
-  opacity: 0;
-}
-
-.page-fade-enter-active {
-  opacity: 1;
-  transition: opacity 300ms ease-in-out;
-}
-
-.page-fade-exit {
-  opacity: 1;
-}
-
-.page-fade-exit-active {
-  opacity: 0;
-  transition: opacity 300ms ease-in-out;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { animation: none; }
+  .caret { animation: none; }
 }

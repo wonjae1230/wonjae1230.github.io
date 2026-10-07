@@ -1,7 +1,7 @@
 const info = {
   // ============ MAIN DETAILS ============
   main: {
-    name: " 이원재",
+    name: "이원재",
     description:
       "저는 풀스택 웹 개발에 전문성을 가진 소프트웨어 엔지니어입니다. 다양한 프레임워크와 기술을 활용해 확장 가능하고, 안전하며, 안정적인 웹 애플리케이션을 개발한 경험이 있습니다. 복잡한 문제를 해결하는 과정과 새로운 기술을 배우는 것을 즐기며, 모범 사례와 업계 표준을 준수하는 고품질 코드를 작성하는 데에 열정을 가지고 있습니다.",
     role: "Full-Stack Developer",
@@ -255,8 +255,13 @@ const info = {
       "저는 항상 새로운 도전과 협업의 기회를 찾고 있습니다. 함께 멋진 프로젝트를 만들어 나가요! 언제든지 편하게 연락 주세요.",
   },
 
-  // ============ FOOTER ============
-  footer: "© 2024 Daniel Shan Balico. All Rights Reserved",
+  // ============ SKILLS ============
+  skills: [
+    { group: "Languages", items: ["JavaScript", "TypeScript", "Python", "Java", "C", "HTML", "CSS"] },
+    { group: "Frontend", items: ["React", "Tailwind CSS", "PWA", "Vite"] },
+    { group: "Backend", items: ["Node.js", "Flask", "MongoDB", "TensorFlow"] },
+    { group: "Tools & Infra", items: ["Git", "GitHub", "Docker", "AWS EC2", "Netlify", "Postman"] },
+  ],
 };
 
 export default info;

@@ -1,35 +1,27 @@
-import { FaSadTear } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Header from "../components/Header.jsx";
 
 function NotFound() {
-  const navigate = useNavigate();
-
   return (
-    <div className="bg-zinc-50 dark:bg-zinc-900">
-      <div className="md:max-w-[1200px] mx-auto h-full border-x border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-950">
-        <div className="flex h-screen justify-center px-6">
-          <div className="self-center text-zinc-900 dark:text-zinc-300">
-            <div className="flex text-5xl justify-center font-bold gap-4">
-              Oops! <FaSadTear />
-            </div>
-            <div className="text-center leading-7 mt-6 text-lg font-light text-zinc-500 dark:text-zinc-400">
-              We can&lsquo;t seem to find the page you&lsquo;re looking for.
-              <br />
-              The requested URL &quot;{window.location.href}&quot; was not found
-              on this server.
-            </div>
-            <div className="text-center mt-6">
-              <button
-                onClick={() => navigate("/")}
-                className="bg-red-800 hover:bg-red-700 text-white px-6 py-4 rounded-xl"
-              >
-                홈으로 돌아가기
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Header />
+      <main className="max-w-page mx-auto px-4 sm:px-8 py-24 md:py-40">
+        <p className="font-mono text-xs uppercase tracking-wider text-muted">404</p>
+        <h1 className="mt-4 text-4xl md:text-6xl font-semibold tracking-tight">
+          없는 페이지입니다.
+        </h1>
+        <p className="mt-6 text-muted break-all">
+          <span className="font-mono text-sm">{window.location.pathname}</span> 주소를 찾을 수 없어요.
+          주소를 다시 확인하거나 홈에서 시작해 주세요.
+        </p>
+        <Link
+          to="/"
+          className="mt-10 inline-block px-5 py-2.5 rounded-full bg-ink text-bg text-sm font-medium hover:bg-accent transition-colors"
+        >
+          홈으로 가기
+        </Link>
+      </main>
+    </>
   );
 }
 

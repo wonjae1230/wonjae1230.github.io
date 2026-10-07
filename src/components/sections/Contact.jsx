@@ -1,83 +1,51 @@
 import user_info from "../../data/user_info.js";
 
-import { FaLinkedin, FaGithubAlt } from "react-icons/fa6";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+const SOCIAL_LABELS = {
+  github: "GitHub",
+  velog: "velog",
+  tistory: "Tistory",
+  linkedin: "LinkedIn",
+  instagram: "Instagram",
+};
 
 function Contact() {
+  const { email } = user_info.main;
+
   return (
-    <section id="contact" className="mt-16 pt-12 px-6 lg:px-24">
-      {/* =========== TITLE =========== */}
-      <h4 className="text-5xl font-bold text-zinc-900 dark:text-zinc-100">
-        지금 당장 연락주세요:{" "}
-        <span className="text-red-800 dark:text-red-500">
-          저와 함께 <br></br>할 수 있게!
-        </span>
-      </h4>
+    <section id="contact" className="border-t border-line">
+      <div className="max-w-page mx-auto px-4 sm:px-8 py-20 md:py-32">
+        <p className="font-mono text-xs uppercase tracking-wider text-muted">Contact</p>
+        <h2 className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight max-w-[18em] leading-tight">
+          {user_info.contact.title}
+        </h2>
+        <p className="mt-6 max-w-[36em] text-ink/80 leading-relaxed">
+          {user_info.contact.description}
+        </p>
 
-      {/* =========== DESCCRIPTION =========== */}
-      <p className="mt-8 leading-7 text-base text-zinc-600 dark:text-zinc-300 font-light">
-        {user_info.contact.description}
-      </p>
-
-      {/* =========== LINKS =========== */}
-      <div className="mt-12">
-        {/* =========== tistory =========== */}
         <a
-          href={user_info.socials.tistory}
-          className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300  hover:text-zinc-700 transition-all duration-300"
+          href={`mailto:${email}`}
+          className="mt-12 inline-block text-[7vw] sm:text-4xl md:text-6xl font-semibold tracking-tight underline decoration-line decoration-2 underline-offset-[0.2em] hover:text-accent hover:decoration-accent transition-colors break-all"
         >
-          <FaFacebook className="self-center text-lg text-red-800 dark:text-red-500" />
-          <span className="self-center">Follow on tistory </span>
+          {email}
         </a>
 
-        {/* =========== github =========== */}
-        <a
-          href={user_info.socials.github}
-          className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 mt-4"
-        >
-          <FaGithubAlt className="self-center text-lg text-red-800 dark:text-red-500" />
-          <span className="self-center">Follow on github</span>
-        </a>
-
-        {/* =========== linkedin =========== */}
-        <a
-          href={user_info.socials.linkedin}
-          className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 mt-4"
-        >
-          <FaLinkedin className="self-center text-lg text-red-800 dark:text-red-500" />
-          <span className="self-center">Follow on linkedin</span>
-        </a>
-
-        {/* =========== insta =========== */}
-        <a
-          href={user_info.socials.instagram}
-          className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 mt-4"
-        >
-          <FaInstagram className="self-center text-lg text-red-800 dark:text-red-500" />
-          <span className="self-center">Follow on instagram</span>
-        </a>
-
-        {/* =========== velog =========== */}
-        <a
-          href={user_info.socials.velog}
-          className="flex gap-4 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300 hover:text-zinc-700 transition-all duration-300 mt-4"
-        >
-          <FaLinkedin className="self-center text-lg text-red-800 dark:text-red-500" />
-          <span className="self-center">Follow on velog</span>
-        </a>
+        <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3">
+          {Object.entries(SOCIAL_LABELS).map(([key, label]) =>
+            user_info.socials[key] ? (
+              <li key={key}>
+                <a
+                  href={user_info.socials[key]}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-muted hover:text-ink transition-colors"
+                >
+                  {label} ↗
+                </a>
+              </li>
+            ) : null
+          )}
+        </ul>
       </div>
-
-      <hr className="mt-6 w-72 border dark:border-zinc-800" />
-
-      {/* =========== EMAIL =========== */}
-      <a
-        href={`mailto:${user_info.main.email}`}
-        className="flex mt-6 text-zinc-600 dark:text-zinc-300 hover:dark:text-zinc-300 gap-4 hover:text-zinc-700 transition-all duration-30"
-      >
-        <MdEmail className="self-center text-lg text-red-800 dark:text-red-500" />
-        <span>{user_info.main.email}</span>
-      </a>
     </section>
   );
 }

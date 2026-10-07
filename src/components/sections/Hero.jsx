@@ -1,64 +1,54 @@
 import user_info from "../../data/user_info.js";
-import { IoIosArrowForward } from "react-icons/io";
+import useHangulTyping from "../../hooks/useHangulTyping.js";
 
 function Hero() {
+  const { name, role, description, photo, email } = user_info.main;
+  const typed = useHangulTyping(name);
+  const school = user_info.education[0];
+
   return (
-    <section
-      id="hero"
-      className="pb-28 pt-24 sm:pt-28 md:pt-44 flex px-6 lg:px-24"
-    >
-      <div className="self-center">
-        <div className="hs-tooltip [--placement:right] w-20 hs-tooltip-toggle">
+    <section id="hero" className="max-w-page mx-auto px-4 sm:px-8 pt-14 md:pt-24 pb-16 md:pb-24">
+      <p className="font-mono text-xs uppercase tracking-wider text-muted">{role}</p>
+
+      <h1
+        aria-label={name}
+        className="mt-4 font-extrabold tracking-[-0.06em] leading-[0.95] text-[28vw] sm:text-[11rem] md:text-[13rem]"
+      >
+        <span aria-hidden="true">{typed}</span>
+        <span className="caret" aria-hidden="true" />
+      </h1>
+
+      <div className="mt-12 md:mt-16 grid md:grid-cols-12 gap-10 md:gap-6 items-end">
+        <div className="md:col-span-7 reveal" style={{ animationDelay: "1.4s" }}>
+          <p className="text-lg md:text-xl leading-relaxed md:leading-relaxed max-w-[34em] text-ink/85">
+            {description}
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 text-sm">
+            <a
+              href="#projects"
+              className="px-5 py-2.5 rounded-full bg-ink text-bg font-medium hover:bg-accent transition-colors"
+            >
+              작업 보기
+            </a>
+            <a
+              href={`mailto:${email}`}
+              className="px-5 py-2.5 rounded-full border border-line hover:border-ink transition-colors"
+            >
+              메일 보내기
+            </a>
+          </div>
+        </div>
+
+        <figure className="md:col-span-3 md:col-start-10 reveal" style={{ animationDelay: "1.6s" }}>
           <img
-            src={user_info.main.photo}
-            className="rounded-full mb-6 lg:hidden"
-            alt="Daniel Shan Balico Graduation Picture"
+            src={photo.replace("../", "/")}
+            alt={`${name} 프로필 사진`}
+            className="w-36 md:w-full md:max-w-[240px] aspect-[4/5] object-cover rounded-sm"
           />
-
-          {/* =========== TOOLTIP TEXT =========== */}
-          <span
-            className="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity  inline-block absolute invisible z-10 py-1 px-2 bg-white border dark:border-zinc-800 dark:bg-zinc-950 text-xs font-medium text-zinc-950 dark:text-white rounded shadow-sm"
-            role="tooltip"
-          >
-            안녕하세요! 👋 오늘 하루 수고하셨어요. 👍
-          </span>
-        </div>
-        <div className="flex gap-2 align-center flex-wrap md:flex-nowrap">
-          <div className="lg:w-[80%] text-zinc-900 dark:text-zinc-100 self-center">
-            <h2 className="text-xl">{user_info.main.role}</h2>
-            <h1 className="font-black mt-3 text-5xl lg:w-[85%]">
-              {user_info.main.name}
-            </h1>
-
-            <p className="mt-6 dark:text-zinc-300 text-base font-light lg:w-[87%] leading-7">
-              {user_info.main.description}
-            </p>
-
-            <div className="flex gap-2 mt-6">
-              <a
-                href="#projects"
-                className="px-6 py-3 border border-black hover:bg-red-800 hover:text-white hover:border-red-800 dark:border-white font-medium transition-all duration-300"
-              >
-                Projects
-              </a>
-              <a
-                href="#contact"
-                className="px-6 py-3 hover:text-red-800 dark:hover:text-red-500 transition-all duration-300 flex gap-3 hover:gap-4"
-              >
-                <span className="self-center font-medium">Contact</span>
-                <IoIosArrowForward className="self-center" />
-              </a>
-            </div>
-          </div>
-
-          <div className="hidden lg:block w-[480px] self-center">
-            <img
-              className="rounded-[10%] transform rotate-3"
-              src={user_info.main.photo}
-              alt="Daniel Shan Balico Graduation Picture"
-            />
-          </div>
-        </div>
+          <figcaption className="mt-3 font-mono text-xs text-muted leading-relaxed">
+            {school.school} · {school.degree}
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
