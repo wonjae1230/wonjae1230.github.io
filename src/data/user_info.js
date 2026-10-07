@@ -316,6 +316,24 @@ const info = {
       ],
     },
     {
+      position: "Pre-인턴십",
+      company: "서림정보통신",
+      duration: "06 2026 - 09 2026 (4 Months)",
+      descriptions: [
+        "정부 지원 Pre-인턴십 프로그램을 통해 서림정보통신에서 인턴십을 수행했습니다.",
+      ],
+    },
+    {
+      position: "뉴노멀 프로젝트 (산학연계)",
+      company: "에이텍모빌리티",
+      duration: "05 2026 - 12 2026 (진행 중)",
+      descriptions: [
+        "산학연계 뉴노멀 프로젝트로 에이텍모빌리티와 협업하고 있습니다.",
+        "기업과 함께 자율주행 데이터를 직접 수집했습니다.",
+        "수집한 데이터를 활용한 VLM(Vision-Language Model) 기반 프로젝트를 수행하고 있습니다.",
+      ],
+    },
+    {
       position: "웹반",
       company: "메타버스 아카데미 6기",
       duration: "12 2025 - 06 2026 (7 Months)",
