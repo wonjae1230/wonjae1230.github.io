@@ -6,6 +6,7 @@ import user_info from "../data/user_info.js";
 const NAV = [
   { href: "/#projects", label: "작업" },
   { href: "/#experience", label: "경력" },
+  { href: "/#awards", label: "수상" },
   { href: "/#skills", label: "기술" },
   { href: "/#contact", label: "연락" },
 ];

@@ -2,6 +2,7 @@ import Header from "../components/Header.jsx";
 import Hero from "../components/sections/Hero.jsx";
 import Projects from "../components/sections/Projects.jsx";
 import Experience from "../components/sections/Experience.jsx";
+import Awards from "../components/sections/Awards.jsx";
 import Skills from "../components/sections/Skills.jsx";
 import Contact from "../components/sections/Contact.jsx";
 import Footer from "../components/sections/Footer.jsx";
@@ -17,6 +18,7 @@ function Homepage() {
         <Hero />
         <Projects />
         <Experience />
+        <Awards />
         <Skills />
         <Contact />
       </main>

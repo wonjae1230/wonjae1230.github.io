@@ -188,6 +188,46 @@ const info = {
     },
   ],
 
+  // ============ AWARDS ============
+  // 스캔 파일은 public/awards/ 에 같은 이름으로 넣으면 자동으로 표시됩니다.
+  awards: [
+    {
+      title: "최우수상",
+      event: "2026 세종 AX 해커톤",
+      issuer: "세종AX해커톤",
+      date: "2026.08",
+      image: "/awards/sejong-ax-hackathon.jpg",
+    },
+    {
+      title: "은상",
+      event: "하계학술대회 대학논문",
+      issuer: "한국디지털콘텐츠학회",
+      date: "2026.07",
+      image: "/awards/kdca-summer-paper.jpg",
+    },
+    {
+      title: "우수논문상",
+      event: "국제문화기술진흥원 학술대회",
+      issuer: "국제문화기술진흥원",
+      date: "2026.06",
+      image: "/awards/iact-paper.jpg",
+    },
+    {
+      title: "연합프로젝트 우수상",
+      event: "TAVE 16기",
+      issuer: "수도권 IT 연합동아리 TAVE",
+      date: "2026.03",
+      image: "/awards/tave-project.jpg",
+    },
+    {
+      title: "표창장",
+      event: "KT IT 서포터즈 3기",
+      issuer: "충남교육감",
+      date: "2026.12",
+      image: "/awards/kt-it-supporters.jpg",
+    },
+  ],
+
   // ============ GPA DATA ============
   gpa: [
     { semester: "1-1", gpa: 3.4 },
