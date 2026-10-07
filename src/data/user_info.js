@@ -183,7 +183,6 @@ const info = {
       descriptions: [
         "수도권 연합동아리 TAVE의 16기 프로젝트인 원코에서 프론트엔드 개발자로 활동 중입니다.",
         "react와 tailwind를 활용하여 PWA 웹 애플리케이션을 개발하고 있습니다.",
-        "metaverse에서 백엔드를 배우는 중입니다. ",
       ],
     },
     {
@@ -246,7 +245,7 @@ const info = {
       event: "메타버스 아카데미 6기 (웹반)",
       detail: "우수교육생 선정",
       issuer: "홍익대학교",
-      date: "",
+      date: "2026.06",
       image: "",
     },
   ],
