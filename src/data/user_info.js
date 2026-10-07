@@ -258,6 +258,7 @@ const info = {
 
     {
       id: "portfolio",
+      solo: true,
       title: "Portfolio Website",
       description:
         "개인 포트폴리오 웹사이트입니다. React와 Tailwind CSS를 활용하여 반응형 디자인을 구현했으며, GitHub Pages로 배포했습니다.",
