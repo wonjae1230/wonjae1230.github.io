@@ -462,8 +462,8 @@ const info = {
 
   // ============ CONTACT ============
   contact: {
-    title: "사람과 기술 사이의\n다리가 되고 싶습니다.",
-    description: "인턴·협업 제안은 메일로 주세요.",
+    // emphasis: 제목에서 강조할 단어
+    title: { before: "사람과 기술 사이의\n", emphasis: "다리", after: "가 되고 싶습니다." },
     channels: [
       { label: "GitHub", key: "github", handle: "wonjae1230" },
       { label: "LinkedIn", key: "linkedin", handle: "이원재" },

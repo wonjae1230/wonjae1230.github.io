@@ -43,17 +43,29 @@ function Row({ label, children }) {
 
 function Contact() {
   const { email } = user_info.main;
-  const { title, description, channels } = user_info.contact;
+  const { title, channels } = user_info.contact;
 
   return (
     <section id="contact" className="border-t border-line">
       <div className="max-w-page mx-auto px-4 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 md:gap-6">
         <div className="md:col-span-5">
           <p className="font-mono text-xs uppercase tracking-wider text-muted">Contact</p>
-          <h2 className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight leading-snug whitespace-pre-line">
-            {title}
+          <h2 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.35] whitespace-pre-line">
+            {title.before}
+            <span className="relative inline-block text-accent font-extrabold">
+              {title.emphasis}
+              {/* 단어 아래에 걸친 아치: 다리 */}
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 100 20"
+                preserveAspectRatio="none"
+                className="absolute left-[-4%] -bottom-[0.3em] w-[108%] h-[0.3em] overflow-visible"
+              >
+                <path d="M2 18 Q50 -6 98 18" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+              </svg>
+            </span>
+            {title.after}
           </h2>
-          <p className="mt-6 text-ink/70">{description}</p>
         </div>
 
         <ul className="md:col-span-7 border-t border-line self-end">
