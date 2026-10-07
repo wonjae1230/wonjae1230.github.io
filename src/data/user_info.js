@@ -191,60 +191,16 @@ const info = {
   // ============ CERTIFICATES ============
   certificates: [
     {
-      title: "Foundations of Cybersecurity Certificate",
-      description: "Provided by Coursera & Authorized by IBM",
-      icon: "ibm",
-      link: "https://www.coursera.org/account/accomplishments/records/SF2PPLNVTH6R",
+      title: "ADsP 데이터분석 준전문가",
+      issuer: "한국데이터산업진흥원",
+      detail: "제50회 합격",
+      date: "2026.08",
     },
     {
-      title: "Git and GitHub Essentials",
-      description: "Provided by Coursera & Authorized by IBM",
-      icon: "ibm",
-      link: "https://www.credly.com/badges/fa00026a-4db5-4269-ab4f-340f5382ac03",
-    },
-    {
-      title: "Crash Course on Python Certificate",
-      description: "Provided by Coursera & Authorized by Google",
-      icon: "google",
-      link: "https://www.coursera.org/account/accomplishments/verify/S9773NBEK4S6",
-    },
-    {
-      title: "Technical Support Fundamentals Certificate",
-      description: "Provided by Coursera & Authorized by Google",
-      icon: "google",
-      link: "https://www.coursera.org/account/accomplishments/verify/P9EH5HNYRESZ",
-    },
-    {
-      title:
-        "Introduction to Web Development with HTML, CSS, JavaScript Certificate",
-      description: "Provided by Coursera & Authorized by IBM",
-      icon: "ibm",
-      link: "https://www.credly.com/badges/7b88eb00-e1f9-4ae6-be2a-3b2ae8983c44",
-    },
-    {
-      title: "Introduction to Cloud Computing Certificate",
-      description: "Provided by Coursera & Authorized by IBM",
-      icon: "ibm",
-      link: "https://www.credly.com/badges/514b694a-8dc4-418d-9af4-61908dc29ca8",
-    },
-    {
-      title:
-        "Django Application Development with SQL and Databases Certificate",
-      description: "Provided by Coursera & Authorized by IBM",
-      icon: "ibm",
-      link: "https://www.credly.com/badges/a36dd8a3-1050-4c4e-bcef-97b39babf55e",
-    },
-    {
-      title: "Front-End Developer (React) Certificate",
-      description: "Provided by HackerRank",
-      icon: "hackerrank",
-      link: "https://www.hackerrank.com/certificates/631ac3acf267",
-    },
-    {
-      title: "Software Engineer Certificate",
-      description: "Provided by HackerRank",
-      icon: "hackerrank",
-      link: "https://www.hackerrank.com/certificates/efdbdd44eb7d",
+      title: "정보처리기사",
+      issuer: "한국산업인력공단",
+      detail: "필기 합격",
+      date: "",
     },
   ],
 
