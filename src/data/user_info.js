@@ -232,7 +232,7 @@ const info = {
 
     {
       id: "cpu-scheduler",
-      leader: true,
+      solo: true,
       title: "CPU scheduling algorithms simulator",
       description:
         "OS시간때 배운 CPU 스케줄링 알고리즘을 시각화한 시뮬레이터입니다. FCFS, SJF, SRT, RR 알고리즘을 지원합니다.",
