@@ -5,6 +5,8 @@ const info = {
     description:
       "저는 풀스택 웹 개발에 전문성을 가진 소프트웨어 엔지니어입니다. 다양한 프레임워크와 기술을 활용해 확장 가능하고, 안전하며, 안정적인 웹 애플리케이션을 개발한 경험이 있습니다. 복잡한 문제를 해결하는 과정과 새로운 기술을 배우는 것을 즐기며, 모범 사례와 업계 표준을 준수하는 고품질 코드를 작성하는 데에 열정을 가지고 있습니다.",
     role: "Full-Stack Developer",
+    // 첫 화면 문장. emphasis 단어 아래에 아치가 그려집니다.
+    tagline: { before: "사람과 기술 사이의\n", emphasis: "다리", after: "가 되고 싶습니다." },
     photo: "../photo.webp",
     email: "lwoj3019515@gmail.com",
   },
@@ -462,8 +464,7 @@ const info = {
 
   // ============ CONTACT ============
   contact: {
-    // emphasis: 제목에서 강조할 단어
-    title: { before: "사람과 기술 사이의\n", emphasis: "다리", after: "가 되고 싶습니다." },
+    title: "그대의 청춘이\n세상을 이롭게 하리라",
     channels: [
       { label: "GitHub", key: "github", handle: "wonjae1230" },
       { label: "LinkedIn", key: "linkedin", handle: "이원재" },

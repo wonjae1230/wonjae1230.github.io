@@ -1,25 +1,33 @@
 import user_info from "../../data/user_info.js";
-import useHangulTyping from "../../hooks/useHangulTyping.js";
+import Arch from "../Arch.jsx";
 
 function Hero() {
-  const { name, role, description, photo, email } = user_info.main;
-  const typed = useHangulTyping(name);
+  const { name, role, tagline, description, photo, email } = user_info.main;
   const school = user_info.education[0];
+  const sentence = tagline.before.replace("\n", " ") + tagline.emphasis + tagline.after;
 
   return (
     <section id="hero" className="max-w-page mx-auto px-4 sm:px-8 pt-14 md:pt-24 pb-16 md:pb-24">
-      <p className="font-mono text-xs uppercase tracking-wider text-muted">{role}</p>
+      <p className="font-mono text-xs uppercase tracking-wider text-muted">
+        {name} · {role}
+      </p>
 
       <h1
-        aria-label={name}
-        className="mt-4 font-extrabold tracking-[-0.06em] leading-[0.95] text-[28vw] sm:text-[11rem] md:text-[13rem]"
+        aria-label={sentence}
+        className="mt-6 font-extrabold tracking-[-0.04em] leading-[1.18] whitespace-pre-line text-[10.5vw] sm:text-[4.25rem] md:text-[5.75rem] lg:text-[7rem]"
       >
-        <span aria-hidden="true">{typed}</span>
-        <span className="caret" aria-hidden="true" />
+        <span aria-hidden="true" className="emerge inline-block">
+          {tagline.before}
+          <span className="relative inline-block text-accent">
+            {tagline.emphasis}
+            <Arch className="arch-draw" />
+          </span>
+          {tagline.after}
+        </span>
       </h1>
 
-      <div className="mt-12 md:mt-16 grid md:grid-cols-12 gap-10 md:gap-6 items-end">
-        <div className="md:col-span-7 reveal" style={{ animationDelay: "1.4s" }}>
+      <div className="mt-14 md:mt-20 grid md:grid-cols-12 gap-10 md:gap-6 items-end">
+        <div className="md:col-span-7 reveal" style={{ animationDelay: "1.5s" }}>
           <p className="text-lg md:text-xl leading-relaxed md:leading-relaxed max-w-[34em] text-ink/85">
             {description}
           </p>
@@ -39,7 +47,7 @@ function Hero() {
           </div>
         </div>
 
-        <figure className="md:col-span-3 md:col-start-10 reveal" style={{ animationDelay: "1.6s" }}>
+        <figure className="md:col-span-3 md:col-start-10 reveal" style={{ animationDelay: "1.65s" }}>
           <img
             src={photo.replace("../", "/")}
             alt={`${name} 프로필 사진`}

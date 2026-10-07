@@ -51,20 +51,7 @@ function Contact() {
         <div className="md:col-span-5">
           <p className="font-mono text-xs uppercase tracking-wider text-muted">Contact</p>
           <h2 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.35] whitespace-pre-line">
-            {title.before}
-            <span className="relative inline-block text-accent font-extrabold">
-              {title.emphasis}
-              {/* 단어 아래에 걸친 아치: 다리 */}
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 100 20"
-                preserveAspectRatio="none"
-                className="absolute left-[-4%] -bottom-[0.3em] w-[108%] h-[0.3em] overflow-visible"
-              >
-                <path d="M2 18 Q50 -6 98 18" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-              </svg>
-            </span>
-            {title.after}
+            {title}
           </h2>
         </div>
 
