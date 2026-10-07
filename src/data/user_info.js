@@ -464,7 +464,7 @@ const info = {
 
   // ============ CONTACT ============
   contact: {
-    title: "그대의 청춘이\n세상을 이롭게 하리라",
+    title: "기술을 사람의 언어로\n옮기는 일,\n함께하고 싶습니다.",
     channels: [
       { label: "GitHub", key: "github", handle: "wonjae1230" },
       { label: "LinkedIn", key: "linkedin", handle: "이원재" },
