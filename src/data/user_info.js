@@ -441,6 +441,7 @@ const info = {
     { semester: "2-2", gpa: 3.4 },
     { semester: "3-1", gpa: 3.7 },
     { semester: "3-2", gpa: 4.2 },
+    { semester: "4-1", gpa: 3.83 },
   ],
 
   // ============ CERTIFICATES ============

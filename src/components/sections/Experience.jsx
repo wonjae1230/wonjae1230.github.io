@@ -13,13 +13,17 @@ function GpaChart({ data }) {
         <span className="text-4xl font-semibold tracking-tight">{avg.toFixed(2)}</span>
         <span className="font-mono text-xs text-muted">평균 / 4.5</span>
       </div>
-      <ol className="mt-6 grid grid-cols-6 gap-2 sm:gap-3 h-40 items-end" aria-label="학기별 학점">
+      <ol
+        className="mt-6 grid gap-2 sm:gap-3 h-40 items-end"
+        style={{ gridTemplateColumns: `repeat(${data.length}, minmax(0, 1fr))` }}
+        aria-label="학기별 학점"
+      >
         {data.map((d, i) => {
           const latest = i === data.length - 1;
           return (
             <li key={d.semester} className="h-full flex flex-col justify-end items-center gap-2">
               <span className={`font-mono text-xs ${latest ? "text-accent" : "text-muted"}`}>
-                {d.gpa.toFixed(1)}
+                {Number.isInteger(d.gpa * 10) ? d.gpa.toFixed(1) : d.gpa.toFixed(2)}
               </span>
               <div
                 className={`w-full rounded-t-sm ${latest ? "bg-accent" : "bg-ink/15"}`}
