@@ -167,6 +167,15 @@ const info = {
       ],
     },
     {
+      position: "웹반",
+      company: "메타버스 아카데미 6기",
+      duration: "12 2025 - 06 2026 (7 Months)",
+      descriptions: [
+        "홍익대학교 학과에서 운영하는 단기 집중형 SW 아카데미에 웹반으로 참여했습니다.",
+        "우수교육생으로 선정되어 총장상을 수상했습니다.",
+      ],
+    },
+    {
       position: "oneday-economy Frontend Developer",
       company: "TAVE 16기",
       duration: "09 2025 - 02 2026 (5 Months)",
@@ -234,9 +243,9 @@ const info = {
     },
     {
       title: "총장상",
-      event: "메타버스 아카데미 6기",
+      event: "메타버스 아카데미 6기 (웹반)",
       detail: "우수교육생 선정",
-      issuer: "",
+      issuer: "홍익대학교",
       date: "",
       image: "",
     },
