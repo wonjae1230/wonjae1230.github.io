@@ -23,6 +23,7 @@ const info = {
   projects: [
     {
       id: "guider",
+      leader: true,
       title: "Guider",
       period: "2026.07 – 2026.08",
       description:
@@ -32,7 +33,7 @@ const info = {
       link: "https://github.com/wonjae1230/Guider",
       image: "/guider.jpg",
       award: "2026 세종 AX 해커톤 최우수상",
-      role: "팀 6명 중 최다 커밋. DOM 추출·하이라이트 content script, 플로팅 위젯 UI, Claude API 프록시 서버를 구현했습니다.",
+      role: "6인 팀의 팀장으로 프로젝트를 이끌며 최다 커밋. DOM 추출·하이라이트 content script, 플로팅 위젯 UI, Claude API 프록시 서버를 구현했습니다.",
       detailedDescription:
         "\"설명은 그만. 목적은 당신이 정하고, 길은 가이더가 안내합니다.\" 정부24처럼 메뉴가 복잡한 사이트에서 사용자가 자연어로 목적을 입력하면, 현재 페이지의 DOM을 분석해 클릭해야 할 요소를 찾아 단계별로 하이라이트합니다. 2026 세종 AX 해커톤(주제: SW·UI/UX 융합 서비스 개발)에서 최우수상을 받았습니다.",
       features: [
@@ -99,6 +100,7 @@ const info = {
 
     {
       id: "intra-q",
+      leader: true,
       title: "intra-Q",
       period: "2026.05",
       description:
@@ -108,7 +110,7 @@ const info = {
       link: "https://github.com/wonjae1230/intra-Q",
       image: "/intraq.jpg",
       award: "국제문화기술진흥원 우수논문상",
-      role: "팀 3명 중 최다 커밋. RAG 파이프라인(쿼리 리라이팅, BM25+RRF, 메타데이터 필터)과 출처 카드 저장 기능을 맡았습니다.",
+      role: "3인 팀의 팀장으로 프로젝트를 이끌며 최다 커밋. RAG 파이프라인(쿼리 리라이팅, BM25+RRF, 메타데이터 필터)과 출처 카드 저장 기능을 맡았습니다.",
       detailedDescription:
         "HR 정책, 사내 규정, SOP 같은 PDF를 올리면 바로 검색할 수 있고, 모든 답변에 출처 파일명과 페이지를 [1], [2]처럼 표기합니다. 질문이 모호하면 먼저 되묻고, 관점에 따라 답이 갈리면 선택지를 제시합니다. 관련 연구 「LLM의 환각 제어를 위한 기업 문서 RAG 프레임워크 연구」로 국제문화기술진흥원 우수논문상을 받았습니다.",
       features: [
@@ -138,6 +140,7 @@ const info = {
 
     {
       id: "songpa-parking",
+      leader: true,
       title: "송파구 불법주차 분석",
       period: "2026 · 8주",
       description:
@@ -146,7 +149,7 @@ const info = {
       github: "https://github.com/wonjae1230/songpa-illegal-parking",
       link: "https://github.com/wonjae1230/songpa-illegal-parking",
       image: "/songpa.jpg",
-      role: "도로 Feature Engineering, 5대 환경요인 통합 클러스터링, ANOVA 검정을 맡았습니다.",
+      role: "팀장으로 8주 분석 일정을 이끌며, 도로 Feature Engineering, 5대 환경요인 통합 클러스터링, ANOVA 검정을 맡았습니다.",
       detailedDescription:
         "\"불법주차는 도시 공간 구조의 문제다.\" 서울시 단속 데이터에 도로망, POI, 야간조도, 토지용도 엔트로피를 결합해 송파구 27개 행정동을 분석했습니다. 핫스팟 3곳(잠실본동·방이2동·가락본동)의 공통 구조를 PCA + K-means로 묶고, ANOVA(F = 5.93, p = 0.0038)로 클러스터 간 차이가 유의함을 검증했습니다. 결론은 주차장 확충이 아니라 회전율 관리입니다.",
       features: [
@@ -204,6 +207,7 @@ const info = {
 
     {
       id: "entr",
+      leader: true,
       title: "entr",
       description:
         "entr은 오픈소스 프로젝트를 응용하여 발전시켰습니다.CLI로 데몬모드와 로깅기능, 리눅스기반의 파일감시 시스템입니다",
@@ -228,6 +232,7 @@ const info = {
 
     {
       id: "cpu-scheduler",
+      leader: true,
       title: "CPU scheduling algorithms simulator",
       description:
         "OS시간때 배운 CPU 스케줄링 알고리즘을 시각화한 시뮬레이터입니다. FCFS, SJF, SRT, RR 알고리즘을 지원합니다.",

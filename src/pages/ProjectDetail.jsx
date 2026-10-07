@@ -85,9 +85,10 @@ function ProjectDetail() {
           <h1 className="mt-6 text-5xl md:text-8xl font-extrabold tracking-[-0.05em] leading-none">
             {project.title}
           </h1>
-          {(project.period || project.award) && (
+          {(project.period || project.award || project.leader) && (
             <p className="mt-5 font-mono text-xs text-muted flex flex-wrap gap-x-4 gap-y-1">
               {project.period && <span>{project.period}</span>}
+              {project.leader && <span className="text-ink">팀장</span>}
               {project.award && <span className="text-accent">{project.award}</span>}
             </p>
           )}
