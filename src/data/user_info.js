@@ -462,10 +462,16 @@ const info = {
 
   // ============ CONTACT ============
   contact: {
-    title: "저와 함께 프로젝트를 진행해 보고 싶으신가요?",
-    description:
-      "저는 항상 새로운 도전과 협업의 기회를 찾고 있습니다. 함께 멋진 프로젝트를 만들어 나가요! 언제든지 편하게 연락 주세요.",
+    title: "사람과 기술 사이의\n다리가 되고 싶습니다.",
+    description: "인턴·협업 제안은 메일로 주세요.",
+    channels: [
+      { label: "GitHub", key: "github", handle: "wonjae1230" },
+      { label: "LinkedIn", key: "linkedin", handle: "이원재" },
+      { label: "Tistory", key: "tistory", handle: "wonwaygo.tistory.com" },
+      { label: "Instagram", key: "instagram", handle: "@21zz_02" },
+    ],
   },
+
 
   // ============ SKILLS ============
   skills: [
