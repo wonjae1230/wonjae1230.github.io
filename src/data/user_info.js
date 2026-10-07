@@ -161,7 +161,7 @@ const info = {
       duration: "09 2026 - 10 2026 (2 Months)",
       descriptions: [
         "미네소타에서 열린 ACM RecSys 2026 학회에 참석했습니다.",
-        "Illinois Institute of Technology(IIT)에서 수업을 청강했습니다.",
+        "시카고의 일리노이 공과대학(Illinois Institute of Technology)을 방문해 현지 수업을 참관하고, 학생들과 학업·프로젝트·진로에 대해 의견을 나눴습니다.",
         "노스웨스턴대학교 에번스턴 캠퍼스를 방문해 컴퓨터과학 분야 관계자들과 대학원 진학 절차와 준비 과정, 전공 역량에 대해 의견을 나눴습니다.",
       ],
     },
