@@ -74,6 +74,16 @@ function Experience() {
                 </li>
               ))}
             </ul>
+            {exp.document && (
+              <a
+                href={exp.document.href}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-block font-mono text-xs text-muted underline underline-offset-4 decoration-line hover:text-accent hover:decoration-accent transition-colors"
+              >
+                {exp.document.label} ↗
+              </a>
+            )}
           </Row>
         ))}
       </ul>

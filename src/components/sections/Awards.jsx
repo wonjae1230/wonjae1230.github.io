@@ -14,7 +14,7 @@ function Scan({ award }) {
       <div className="w-full h-full flex flex-col items-center justify-center gap-3 p-6 text-center border border-dashed border-line">
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">Certificate</span>
         <span className="text-2xl font-semibold tracking-tight">{award.title}</span>
-        <span className="text-xs text-muted">{award.issuer}</span>
+        <span className="text-xs text-muted">{award.event}</span>
       </div>
     );
   }
@@ -117,10 +117,11 @@ function Awards() {
             <div className="aspect-[1/1.414] bg-surface rounded-sm overflow-hidden">
               <Scan award={a} />
             </div>
-            <p className="mt-4 font-mono text-xs text-muted">{a.date}</p>
-            <h3 className="mt-1 text-lg font-semibold tracking-tight">{a.title}</h3>
+            {a.date && <p className="mt-4 font-mono text-xs text-muted">{a.date}</p>}
+            <h3 className={`${a.date ? "mt-1" : "mt-4"} text-lg font-semibold tracking-tight`}>{a.title}</h3>
             <p className="text-sm text-ink/80">{a.event}</p>
-            <p className="text-sm text-muted">{a.issuer}</p>
+            {a.detail && <p className="mt-1 text-sm text-ink/60 leading-snug">{a.detail}</p>}
+            {a.issuer && <p className="mt-1 text-sm text-muted">{a.issuer}</p>}
           </li>
         ))}
       </ol>
