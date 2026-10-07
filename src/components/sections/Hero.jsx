@@ -1,6 +1,23 @@
 import user_info from "../../data/user_info.js";
 import Arch from "../Arch.jsx";
 
+// "[Guider](guider)" → 작업 목록의 #project-guider 로 이동하는 링크
+function withProjectLinks(text) {
+  return text.split(/(\[[^\]]+\]\([^)]+\))/).map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!m) return part;
+    return (
+      <a
+        key={i}
+        href={`#project-${m[2]}`}
+        className="font-semibold text-ink underline decoration-[1.5px] underline-offset-[0.22em] decoration-ink/70 hover:text-accent hover:decoration-accent transition-colors"
+      >
+        {m[1]}
+      </a>
+    );
+  });
+}
+
 function Hero() {
   const { name, role, tagline, description, photo, email } = user_info.main;
   const school = user_info.education[0];
@@ -42,7 +59,7 @@ function Hero() {
 
       <div className="mt-14 md:mt-16 reveal" style={{ animationDelay: "1s" }}>
         <p className="text-lg md:text-xl leading-relaxed md:leading-relaxed max-w-[34em] text-ink/85">
-          {description}
+          {withProjectLinks(description)}
         </p>
         <div className="mt-8 flex flex-wrap gap-3 text-sm">
           <a

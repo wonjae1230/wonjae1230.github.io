@@ -26,7 +26,7 @@ function Projects() {
         className="relative border-t border-line"
       >
         {user_info.projects.map((p) => (
-          <li key={p.id} className="border-b border-line">
+          <li key={p.id} id={`project-${p.id}`} className="project-row border-b border-line">
             <Link
               to={`/project/${p.id}`}
               onClick={rememberScroll}

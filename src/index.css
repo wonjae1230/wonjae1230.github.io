@@ -75,9 +75,19 @@ body {
   from { opacity: 0; transform: translateY(12px); }
 }
 
+/* 소개글 링크로 이동했을 때 해당 프로젝트 제목을 잠깐 강조 */
+.project-row:target h3 {
+  animation: flash 1.6s ease-out;
+}
+
+@keyframes flash {
+  0%, 40% { color: rgb(var(--accent)); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal,
-  .emerge { animation: none; }
+  .emerge,
+  .project-row:target h3 { animation: none; }
   .arch-draw { animation: none; clip-path: none; }
 }
