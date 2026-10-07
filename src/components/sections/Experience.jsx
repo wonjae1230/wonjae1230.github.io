@@ -4,15 +4,29 @@ import Section from "../Section.jsx";
 const MIN = 2.5;
 const MAX = 4.5;
 
-function GpaChart({ data }) {
-  const avg = data.reduce((sum, d) => sum + d.gpa, 0) / data.length;
+function GpaChart({ data, summary }) {
+  const total = summary?.total ?? data.reduce((sum, d) => sum + d.gpa, 0) / data.length;
 
   return (
     <div>
-      <div className="flex items-baseline gap-3">
-        <span className="text-4xl font-semibold tracking-tight">{avg.toFixed(2)}</span>
-        <span className="font-mono text-xs text-muted">평균 / 4.5</span>
-      </div>
+      <dl className="flex flex-wrap items-end gap-x-10 gap-y-4">
+        <div>
+          <dt className="font-mono text-xs text-muted">전체 평점</dt>
+          <dd className="mt-1 text-4xl font-semibold tracking-tight">
+            {total.toFixed(2)}
+            <span className="ml-2 font-mono text-xs font-normal text-muted">/ 4.5</span>
+          </dd>
+        </div>
+        {summary?.major && (
+          <div>
+            <dt className="font-mono text-xs text-muted">전공 평점</dt>
+            <dd className="mt-1 text-4xl font-semibold tracking-tight text-accent">
+              {summary.major.toFixed(2)}
+              <span className="ml-2 font-mono text-xs font-normal text-muted">/ 4.5</span>
+            </dd>
+          </div>
+        )}
+      </dl>
       <ol
         className="mt-6 grid gap-2 sm:gap-3 h-40 items-end"
         style={{ gridTemplateColumns: `repeat(${data.length}, minmax(0, 1fr))` }}
@@ -114,7 +128,7 @@ function Experience() {
         </div>
         <div>
           <h3 className="font-mono text-xs uppercase tracking-wider text-muted mb-6">학기별 학점</h3>
-          <GpaChart data={user_info.gpa} />
+          <GpaChart data={user_info.gpa} summary={user_info.gpaSummary} />
         </div>
       </div>
     </Section>

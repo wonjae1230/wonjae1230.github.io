@@ -436,6 +436,8 @@ const info = {
   ],
 
   // ============ GPA DATA ============
+  // 성적표 기준 평점. total을 비워두면 학기별 학점의 단순 평균을 표시합니다.
+  gpaSummary: { total: null, major: 3.7 },
   gpa: [
     { semester: "1-1", gpa: 3.4 },
     { semester: "1-2", gpa: 3.3 },
