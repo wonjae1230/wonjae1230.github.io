@@ -46,7 +46,7 @@ body {
 /* 첫 화면 문장: 화면 깊은 곳에서 앞으로 다가오며 나타남 */
 .emerge {
   transform-origin: 50% 60%;
-  animation: emerge 1100ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
+  animation: emerge 900ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both;
 }
 
 @keyframes emerge {
@@ -60,7 +60,7 @@ body {
 /* 문장이 다 나타난 뒤 아치를 왼쪽에서 오른쪽으로 그림 */
 .arch-draw {
   clip-path: inset(-50% 100% -50% 0);
-  animation: draw 700ms cubic-bezier(0.65, 0, 0.35, 1) 1250ms forwards;
+  animation: draw 500ms cubic-bezier(0.65, 0, 0.35, 1) 750ms forwards;
 }
 
 @keyframes draw {

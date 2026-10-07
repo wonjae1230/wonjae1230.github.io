@@ -38,10 +38,21 @@ function GpaChart({ data }) {
   );
 }
 
+// "09 2026 - 10 2026 (2 Months)" → 기간과 괄호 내용을 두 줄로
+function When({ text }) {
+  const m = text.match(/^(.*?)\s*(\(.*\))$/);
+  return (
+    <p className="font-mono text-xs text-muted pt-1 leading-relaxed">
+      <span className="whitespace-nowrap">{m ? m[1] : text}</span>
+      {m && <span className="block">{m[2]}</span>}
+    </p>
+  );
+}
+
 function Row({ when, title, sub, image, children }) {
   return (
     <li className="grid sm:grid-cols-[12rem_1fr] gap-x-6 gap-y-2 py-6 border-b border-line">
-      <p className="font-mono text-xs text-muted pt-1">{when}</p>
+      <When text={when} />
       <div>
         <div className="flex items-center gap-3">
           {image && (
