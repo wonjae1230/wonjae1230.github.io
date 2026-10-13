@@ -270,12 +270,12 @@ const info = {
       link: "https://wonjae1230.github.io",
       image: "/portfoilo.png",
       detailedDescription:
-        "나만의 포트폴리오 웹사이트를 직접 디자인하고 개발한 프로젝트입니다. 다크모드, 학점 그래프, 프로젝트 상세 페이지 등 다양한 기능을 구현했습니다.",
+        "나만의 포트폴리오 웹사이트를 직접 디자인하고 개발한 프로젝트입니다. 다크모드, 프로젝트 상세 페이지, 수상 슬라이드 등 다양한 기능을 구현했습니다.",
       features: [
         "다크모드 지원",
         "반응형 웹 디자인",
         "프로젝트 상세 페이지",
-        "학점 변화 그래프 (Recharts)",
+        "상장 스캔 좌우 슬라이드",
         "인터랙티브한 UI/UX",
         "GitHub Pages 자동 배포",
       ],
@@ -283,14 +283,12 @@ const info = {
         { name: "React", reason: "컴포넌트 기반 개발 및 상태 관리" },
         { name: "Tailwind CSS", reason: "빠른 스타일링 및 반응형 디자인" },
         { name: "Vite", reason: "빠른 개발 환경 및 빌드" },
-        { name: "Recharts", reason: "데이터 시각화" },
         { name: "React Router", reason: "SPA 라우팅" },
       ],
       learned: [
         "React 프로젝트 구조 설계",
         "Tailwind CSS를 활용한 모던 UI 구현",
         "GitHub Pages 배포 및 CI/CD",
-        "차트 라이브러리 활용",
       ],
       screenshots: ["/portfoilo.png", "/cover.png"],
     },
@@ -434,19 +432,6 @@ const info = {
       date: "2026.06",
       image: "",
     },
-  ],
-
-  // ============ GPA DATA ============
-  // 성적표 기준 평점. total을 비워두면 학기별 학점의 단순 평균을 표시합니다.
-  gpaSummary: { total: null, major: 3.7 },
-  gpa: [
-    { semester: "1-1", gpa: 3.4 },
-    { semester: "1-2", gpa: 3.3 },
-    { semester: "2-1", gpa: 3.0 },
-    { semester: "2-2", gpa: 3.4 },
-    { semester: "3-1", gpa: 3.7 },
-    { semester: "3-2", gpa: 4.2 },
-    { semester: "4-1", gpa: 3.83 },
   ],
 
   // ============ CERTIFICATES ============
