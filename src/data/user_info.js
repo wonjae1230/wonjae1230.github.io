@@ -304,7 +304,7 @@ const info = {
     },
     {
       school: "홍익대학교",
-      degree: "산업데이터공학과",
+      degree: "산업데이터공학과 (복수전공)",
       duration: "2022 ~",
       image: "tup.webp",
     },
