@@ -298,8 +298,14 @@ const info = {
   education: [
     {
       school: "홍익대학교",
-      degree: "소프트웨어융합학과, 산업데이터공학과",
+      degree: "소프트웨어융합학과",
       duration: "2021 ~",
+      image: "tup.webp",
+    },
+    {
+      school: "홍익대학교",
+      degree: "산업데이터공학과",
+      duration: "2022 ~",
       image: "tup.webp",
     },
     {

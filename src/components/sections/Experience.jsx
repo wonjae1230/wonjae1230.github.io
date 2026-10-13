@@ -69,7 +69,7 @@ function Experience() {
       <h3 className="mt-16 font-mono text-xs uppercase tracking-wider text-muted">학력</h3>
       <ul className="mt-2 border-t border-line">
         {user_info.education.map((edu) => (
-          <Row key={edu.school} when={edu.duration} title={edu.school} sub={edu.degree} image={edu.image} />
+          <Row key={edu.school + edu.degree} when={edu.duration} title={edu.school} sub={edu.degree} image={edu.image} />
         ))}
       </ul>
     </Section>
