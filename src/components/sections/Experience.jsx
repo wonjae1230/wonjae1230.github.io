@@ -19,7 +19,11 @@ function Row({ when, title, sub, image, children }) {
       <div>
         <div className="flex items-center gap-3">
           {image && (
-            <img src={`/${image}`} alt="" className="w-8 h-8 rounded-full object-cover bg-surface" />
+            <img
+              src={`/${image}`}
+              alt=""
+              className="w-8 h-8 rounded-full object-cover bg-surface"
+            />
           )}
           <div>
             <h3 className="font-semibold">{title}</h3>
@@ -35,7 +39,9 @@ function Row({ when, title, sub, image, children }) {
 function Experience() {
   return (
     <Section id="experience" title="경력" en="Experience & Education">
-      <h3 className="font-mono text-xs uppercase tracking-wider text-muted">활동</h3>
+      <h3 className="font-mono text-xs uppercase tracking-wider text-muted">
+        활동
+      </h3>
       <ul className="mt-2 border-t border-line">
         {user_info.experience.map((exp) => (
           <Row
@@ -47,7 +53,10 @@ function Experience() {
           >
             <ul className="mt-4 space-y-2 text-ink/80 leading-relaxed">
               {exp.descriptions.map((d) => (
-                <li key={d} className="pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-muted">
+                <li
+                  key={d}
+                  className="pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-muted"
+                >
                   {d.trim()}
                 </li>
               ))}
@@ -66,10 +75,18 @@ function Experience() {
         ))}
       </ul>
 
-      <h3 className="mt-16 font-mono text-xs uppercase tracking-wider text-muted">학력</h3>
+      <h3 className="mt-16 font-mono text-xs uppercase tracking-wider text-muted">
+        학력
+      </h3>
       <ul className="mt-2 border-t border-line">
         {user_info.education.map((edu) => (
-          <Row key={edu.school + edu.degree} when={edu.duration} title={edu.school} sub={edu.degree} image={edu.image} />
+          <Row
+            key={edu.school + edu.degree}
+            when={edu.duration}
+            title={edu.school}
+            sub={edu.degree}
+            image={edu.image}
+          />
         ))}
       </ul>
     </Section>

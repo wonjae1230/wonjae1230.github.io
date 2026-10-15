@@ -7,7 +7,11 @@ const info = {
       "기획자와 개발자가 그린 의도가 사용자에게 정확히 닿도록, 그 사이를 잇는 풀스택 개발자입니다. 복잡한 기능일수록 사용자가 헤매지 않는 화면으로 옮기는 데 집중합니다. 웹 사용법을 AI가 직접 안내하는 [Guider](guider), 논문 사이의 관계를 로드맵으로 보여주는 [CLIP](clip)처럼 어려운 것을 쉽게 전달하는 화면을 만들어 왔습니다.",
     role: "Full-Stack Developer",
     // 첫 화면 문장. emphasis 단어 아래에 아치가 그려집니다.
-    tagline: { before: "사람과 기술 사이의\n", emphasis: "다리", after: "가 되고 싶습니다." },
+    tagline: {
+      before: "사람과 기술 사이의\n",
+      emphasis: "다리",
+      after: "가 되고 싶습니다.",
+    },
     photo: "../photo.webp",
     email: "lwoj3019515@gmail.com",
   },
@@ -38,7 +42,7 @@ const info = {
       award: "2026 세종 AX 해커톤 최우수상",
       role: "6인 팀의 팀장으로 프로젝트를 이끌며 최다 커밋. DOM 추출·하이라이트 content script, 플로팅 위젯 UI, Claude API 프록시 서버를 구현했습니다.",
       detailedDescription:
-        "\"설명은 그만. 목적은 당신이 정하고, 길은 가이더가 안내합니다.\" 정부24처럼 메뉴가 복잡한 사이트에서 사용자가 자연어로 목적을 입력하면, 현재 페이지의 DOM을 분석해 클릭해야 할 요소를 찾아 단계별로 하이라이트합니다. 2026 세종 AX 해커톤(주제: SW·UI/UX 융합 서비스 개발)에서 최우수상을 받았습니다.",
+        '"설명은 그만. 목적은 당신이 정하고, 길은 가이더가 안내합니다." 정부24처럼 메뉴가 복잡한 사이트에서 사용자가 자연어로 목적을 입력하면, 현재 페이지의 DOM을 분석해 클릭해야 할 요소를 찾아 단계별로 하이라이트합니다. 2026 세종 AX 해커톤(주제: SW·UI/UX 융합 서비스 개발)에서 최우수상을 받았습니다.',
       features: [
         "자연어 질문 → 페이지 DOM 분석 → 클릭할 요소 하이라이트",
         "단계별 안내와 URL 변경 감지 후 자동 재실행",
@@ -48,7 +52,10 @@ const info = {
         "Redis 응답 캐시로 반복 질문 비용 절감",
       ],
       techStack: [
-        { name: "Chrome Extension (MV3)", reason: "content script로 페이지 DOM 접근" },
+        {
+          name: "Chrome Extension (MV3)",
+          reason: "content script로 페이지 DOM 접근",
+        },
         { name: "React", reason: "Shadow DOM에 주입하는 위젯 UI" },
         { name: "Express", reason: "API 키를 숨기는 Claude 프록시 서버" },
         { name: "Claude API", reason: "질문과 DOM 요소를 매칭해 경로 판단" },
@@ -85,7 +92,10 @@ const info = {
         "검색 기록·북마크·마이페이지",
       ],
       techStack: [
-        { name: "React + React Flow", reason: "로드맵 그래프 렌더링과 상호작용" },
+        {
+          name: "React + React Flow",
+          reason: "로드맵 그래프 렌더링과 상호작용",
+        },
         { name: "dagre", reason: "그래프 노드 자동 배치" },
         { name: "zustand", reason: "로그인·사용자 상태 관리" },
         { name: "Tailwind CSS v4", reason: "UI 스타일링" },
@@ -154,7 +164,7 @@ const info = {
       image: "/songpa.jpg",
       role: "팀장으로 8주 분석 일정을 이끌며, 도로 Feature Engineering, 5대 환경요인 통합 클러스터링, ANOVA 검정을 맡았습니다.",
       detailedDescription:
-        "\"불법주차는 도시 공간 구조의 문제다.\" 서울시 단속 데이터에 도로망, POI, 야간조도, 토지용도 엔트로피를 결합해 송파구 27개 행정동을 분석했습니다. 핫스팟 3곳(잠실본동·방이2동·가락본동)의 공통 구조를 PCA + K-means로 묶고, ANOVA(F = 5.93, p = 0.0038)로 클러스터 간 차이가 유의함을 검증했습니다. 결론은 주차장 확충이 아니라 회전율 관리입니다.",
+        '"불법주차는 도시 공간 구조의 문제다." 서울시 단속 데이터에 도로망, POI, 야간조도, 토지용도 엔트로피를 결합해 송파구 27개 행정동을 분석했습니다. 핫스팟 3곳(잠실본동·방이2동·가락본동)의 공통 구조를 PCA + K-means로 묶고, ANOVA(F = 5.93, p = 0.0038)로 클러스터 간 차이가 유의함을 검증했습니다. 결론은 주차장 확충이 아니라 회전율 관리입니다.',
       features: [
         "KDE로 불법주차 핫스팟 도출",
         "도로 밀도·이면도로 비율·교차로 밀도 파생변수 설계",
@@ -298,19 +308,20 @@ const info = {
   education: [
     {
       school: "홍익대학교",
-      degree: "소프트웨어융합학과",
-      duration: "2021 ~",
-      image: "tup.webp",
-    },
-    {
-      school: "홍익대학교",
       degree: "산업데이터공학과 (복수전공)",
       duration: "2022 ~",
       image: "tup.webp",
     },
     {
+      school: "홍익대학교",
+      degree: "소프트웨어융합학과",
+      duration: "2021 ~",
+      image: "tup.webp",
+    },
+
+    {
       school: "숭실고등학교",
-      degree: "뻔하게 졸업",
+      degree: "이과 계열",
       duration: "2018 - 2021",
       image: "sti.webp",
     },
@@ -322,7 +333,10 @@ const info = {
       position: "해외연수",
       company: "미국 연수 프로그램",
       duration: "09 2026 - 10 2026 (2 Months)",
-      document: { label: "RecSys '26 참가 확인서", href: "/experience/recsys-2026.jpg" },
+      document: {
+        label: "RecSys '26 참가 확인서",
+        href: "/experience/recsys-2026.jpg",
+      },
       descriptions: [
         "미네소타에서 열린 RecSys '26(제20회 ACM 추천 시스템 학회, 9.28–10.2)에 참석했습니다.",
         "시카고의 일리노이 공과대학(Illinois Institute of Technology)을 방문해 현지 수업을 참관하고, 학생들과 학업·프로젝트·진로에 대해 의견을 나눴습니다.",
@@ -467,13 +481,18 @@ const info = {
     ],
   },
 
-
   // ============ SKILLS ============
   skills: [
-    { group: "Languages", items: ["JavaScript", "TypeScript", "Python", "Java", "C", "HTML", "CSS"] },
+    {
+      group: "Languages",
+      items: ["JavaScript", "TypeScript", "Python", "Java", "C", "HTML", "CSS"],
+    },
     { group: "Frontend", items: ["React", "Tailwind CSS", "PWA", "Vite"] },
     { group: "Backend", items: ["Node.js", "Flask", "MongoDB", "TensorFlow"] },
-    { group: "Tools & Infra", items: ["Git", "GitHub", "Docker", "AWS EC2", "Netlify", "Postman"] },
+    {
+      group: "Tools & Infra",
+      items: ["Git", "GitHub", "Docker", "AWS EC2", "Netlify", "Postman"],
+    },
   ],
 };
 
